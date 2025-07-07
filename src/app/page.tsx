@@ -388,9 +388,9 @@ export default function Home() {
         </section>
         
         <Philosophy />
-        <Scope />
-        <Security />
         <TechnologySlider />
+        <Security />
+        <Scope />
         <Contact />
       </main>
       <Footer />
