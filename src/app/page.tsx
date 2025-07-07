@@ -14,7 +14,7 @@ import { Puzzle, TrendingUp, RefreshCw } from "lucide-react";
 // All dynamic page content is centralized here for easy editing.
 const pageData = {
   hero: {
-    image: "/img/bg.jpg",
+    image: "https://placehold.co/1920x1080.png",
     hint: "background"
   },
   enterpriseSolutions: [
