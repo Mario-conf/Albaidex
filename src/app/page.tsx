@@ -174,7 +174,7 @@ const Philosophy = () => (
       <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mt-12 fade-in">
         <Card className="card-hover flex flex-col text-center items-center p-6">
           <CardHeader>
-            <div className="bg-muted rounded-full w-20 h-20 flex items-center justify-center mb-4">
+            <div className="bg-background rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-md">
               <Github className="w-10 h-10 text-primary" />
             </div>
             <CardTitle>Open Code</CardTitle>
@@ -185,7 +185,7 @@ const Philosophy = () => (
         </Card>
         <Card className="card-hover flex flex-col text-center items-center p-6">
           <CardHeader>
-            <div className="bg-muted rounded-full w-20 h-20 flex items-center justify-center mb-4">
+            <div className="bg-background rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-md">
               <Sparkles className="w-10 h-10 text-primary" />
             </div>
             <CardTitle>IA Esencial</CardTitle>
@@ -196,7 +196,7 @@ const Philosophy = () => (
         </Card>
         <Card className="card-hover flex flex-col text-center items-center p-6">
           <CardHeader>
-            <div className="bg-muted rounded-full w-20 h-20 flex items-center justify-center mb-4">
+            <div className="bg-background rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-md">
               <Zap className="w-10 h-10 text-primary" />
             </div>
             <CardTitle>Eficiencia Radical</CardTitle>
@@ -222,7 +222,7 @@ const Scope = () => (
       <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mt-12 fade-in max-w-4xl mx-auto">
         <Card className="card-hover flex flex-col text-center items-center p-6">
           <CardHeader>
-            <div className="bg-muted rounded-full w-20 h-20 flex items-center justify-center mb-4">
+            <div className="bg-muted rounded-full w-24 h-24 flex items-center justify-center mb-4">
               <Globe className="w-10 h-10 text-primary" />
             </div>
             <CardTitle>Clientes Internacionales</CardTitle>
@@ -233,7 +233,7 @@ const Scope = () => (
         </Card>
         <Card className="card-hover flex flex-col text-center items-center p-6">
           <CardHeader>
-            <div className="bg-muted rounded-full w-20 h-20 flex items-center justify-center mb-4">
+            <div className="bg-muted rounded-full w-24 h-24 flex items-center justify-center mb-4">
               <Wifi className="w-10 h-10 text-primary" />
             </div>
             <CardTitle>Trabajo 100% Remoto</CardTitle>
@@ -337,7 +337,7 @@ export default function Home() {
                 {pageData.enterpriseSolutions.map((solution) => (
                   <Card key={solution.title} className="card-hover flex flex-col text-center items-center p-6">
                     <CardHeader>
-                      <div className="bg-muted rounded-full w-20 h-20 flex items-center justify-center mb-4">
+                      <div className="bg-muted rounded-full w-24 h-24 flex items-center justify-center mb-4">
                         {solution.icon}
                       </div>
                       <CardTitle>{solution.title}</CardTitle>
@@ -397,5 +397,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
