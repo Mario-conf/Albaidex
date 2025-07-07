@@ -8,7 +8,6 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Flame, BrainCircuit, FileCode, Hexagon, Triangle, Wind, Network } from "lucide-react";
 
@@ -50,40 +49,33 @@ const technologies = [
   { name: "Vercel", icon: <Triangle className="w-full h-full" fill="currentColor" /> },
 ];
 
-const TechnologySlider = () => (
-    <section className="py-20 md:py-32 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16 fade-in">
-                <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Nuestro Ecosistema Tecnológico</h3>
-                <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Usamos tecnologías modernas y fiables para construir soluciones de alta calidad.</p>
+const TechnologySlider = () => {
+    // Duplicating the array for a seamless loop
+    const extendedTechnologies = [...technologies, ...technologies];
+
+    return (
+        <section className="py-20 md:py-32 bg-background overflow-hidden">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-16 fade-in">
+                    <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Nuestro Ecosistema Tecnológico</h3>
+                    <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Usamos tecnologías modernas y fiables para construir soluciones de alta calidad.</p>
+                </div>
             </div>
-            <div className="fade-in">
-                <Carousel
-                    opts={{
-                        align: "start",
-                        loop: true,
-                    }}
-                    className="w-full max-w-6xl mx-auto"
-                >
-                    <CarouselContent className="-ml-4">
-                        {technologies.map((tech, index) => (
-                            <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4 xl:basis-1/6">
-                                <div className="p-1">
-                                    <div className="flex flex-col items-center justify-center p-6 bg-card rounded-2xl border border-border/50 h-48 card-hover">
-                                        <div className="h-16 w-16 mb-4 text-foreground/80">{tech.icon}</div>
-                                        <p className="font-semibold text-foreground text-center">{tech.name}</p>
-                                    </div>
-                                </div>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                    <CarouselPrevious className="hidden sm:flex" />
-                    <CarouselNext className="hidden sm:flex" />
-                </Carousel>
+            <div className="relative fade-in group">
+                <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
+                    {extendedTechnologies.map((tech, index) => (
+                        <div key={index} className="flex-shrink-0 w-64 px-4">
+                            <div className="flex flex-col items-center justify-center p-6 bg-card rounded-2xl border border-border/50 h-48">
+                                <div className="h-16 w-16 mb-4 text-foreground/80">{tech.icon}</div>
+                                <p className="font-semibold text-foreground text-center">{tech.name}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
-    </section>
-);
+        </section>
+    );
+};
 
 const Contact = () => (
     <section id="contact" className="bg-muted">
