@@ -5,33 +5,9 @@ import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Flame, BrainCircuit, FileCode, Hexagon, Triangle, Wind, Network } from "lucide-react";
+import { ArrowRight, Building, Layers, Briefcase, Flame, BrainCircuit, FileCode, Hexagon, Triangle, Wind, Network } from "lucide-react";
 
 // Custom Icons
-const CustomSoftwareIcon = () => (
-  <svg className="w-8 h-8 text-[hsl(var(--primary))]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9.75 6.375c.621 1.026 1.511 1.838 2.528 2.457A7.5 7.5 0 0018 16.5c.346 0 .684-.044 1.012-.128a7.525 7.525 0 00-4.01-4.425 7.5 7.5 0 00-8.49 5.25z" strokeLinecap="round" strokeLinejoin="round"></path>
-  </svg>
-);
-
-const ITConsultingIcon = () => (
-  <svg className="w-8 h-8 text-[hsl(var(--primary))]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" strokeLinecap="round" strokeLinejoin="round"></path>
-  </svg>
-);
-
-const SystemModernizationIcon = () => (
-    <svg className="w-8 h-8 text-[hsl(var(--primary))]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.82m5.84-2.56a14.977 14.977 0 01-2.07 5.01m-1.72-5.01a14.977 14.977 0 00-2.07-5.01m6.09-3.32a14.977 14.977 0 01-5.84 7.38m5.84-7.38a14.977 14.977 0 00-5.84-7.38m5.84 7.38l-5.84 7.38m0-14.76l5.84 7.38" strokeLinecap="round" strokeLinejoin="round"></path>
-    </svg>
-);
-
-const ArrowRightIcon = () => (
-    <svg className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
-    </svg>
-);
-
 const ReactIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-11.5 -10.23174 23 20.46348" className="h-full w-full" fill="currentColor">
         <title>React</title>
@@ -46,87 +22,95 @@ const ReactIcon = () => (
 
 // Page Sections
 const Hero = () => (
-  <section className="h-screen flex items-center justify-center text-black relative bg-cover bg-center" style={{backgroundImage: "url('https://placehold.co/1920x1080.png')"}} data-ai-hint="business team collaboration">
-    <div className="absolute inset-0 bg-white/30 backdrop-blur-sm"></div>
-    <div className="relative text-center px-4 fade-in z-10">
-      <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight">Software that moves you.</h1>
-      <p className="mt-6 max-w-2xl mx-auto text-xl md:text-2xl text-gray-800">We build powerful, elegant solutions for visionary businesses and individuals.</p>
-      <Button asChild size="lg" className="mt-10 h-auto bg-[hsl(var(--amber))] text-black font-bold py-4 px-10 rounded-full hover:opacity-90 transition-all duration-300 text-lg shadow-lg">
-        <Link href="#contact">Start Your Project</Link>
-      </Button>
+  <section className="relative h-screen flex items-center justify-center text-center text-white bg-black">
+    <Image src="https://placehold.co/1920x1080.png" alt="Equipo de Albaidex colaborando en un proyecto" layout="fill" objectFit="cover" className="opacity-40" data-ai-hint="modern office collaboration"/>
+    <div className="relative z-10 p-4 fade-in">
+        <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight text-white">Software que te impulsa.</h1>
+        <p className="mt-6 max-w-2xl mx-auto text-xl md:text-2xl text-gray-200">Creamos soluciones potentes y elegantes para empresas e individuos con visión de futuro.</p>
+        <Button asChild size="lg" className="mt-10 h-auto bg-primary text-primary-foreground font-bold py-4 px-10 rounded-full hover:bg-primary/90 transition-all duration-300 text-lg shadow-lg">
+            <Link href="#contact">Comienza tu Proyecto</Link>
+        </Button>
     </div>
   </section>
 );
 
 const ServiceCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
-    <div className="bg-white p-8 rounded-xl border border-gray-100 card-hover">
-        <div className="flex items-center justify-center h-16 w-16 bg-gray-100 rounded-full mb-6">
+    <div className="bg-card p-8 rounded-2xl border border-border/50 card-hover fade-in">
+        <div className="flex items-center justify-center h-16 w-16 bg-muted rounded-full mb-6 text-primary">
             {icon}
         </div>
-        <h4 className="text-2xl font-bold">{title}</h4>
-        <p className="mt-3 text-gray-600">{description}</p>
+        <h4 className="text-2xl font-bold text-foreground">{title}</h4>
+        <p className="mt-3 text-muted-foreground">{description}</p>
     </div>
 );
 
-const ServicesBusiness = () => (
-  <section id="services-business" className="py-20 md:py-32 bg-white">
+const EnterpriseSolutions = () => (
+  <section id="enterprise" className="py-20 md:py-32 bg-background">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16 fade-in" style={{ animationDelay: '0.2s' }}>
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">For Your Business</h2>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Driving growth and efficiency with cutting-edge technology.</p>
+      <div className="text-center mb-16 fade-in">
+        <span className="text-primary font-bold tracking-widest uppercase">Albaidex Enterprise</span>
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-2">Soluciones para tu Empresa</h2>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Impulsando el crecimiento y la eficiencia con tecnología de vanguardia.</p>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 fade-in" style={{ animationDelay: '0.4s' }}>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
         <ServiceCard 
-          icon={<CustomSoftwareIcon />}
-          title="Custom Software"
-          description="Bespoke applications built from the ground up to meet your exact business needs and goals."
+          icon={<Layers className="w-8 h-8"/>}
+          title="Software a Medida"
+          description="Aplicaciones a medida construidas desde cero para satisfacer las necesidades y objetivos de tu negocio."
         />
         <ServiceCard 
-          icon={<ITConsultingIcon />}
-          title="IT Consulting"
-          description="Expert strategic advice to align your technology with your business objectives for maximum impact."
+          icon={<Briefcase className="w-8 h-8"/>}
+          title="Consultoría Tecnológica"
+          description="Asesoramiento estratégico experto para alinear tu tecnología con tus objetivos empresariales para un impacto máximo."
         />
         <ServiceCard 
-          icon={<SystemModernizationIcon />}
-          title="System Modernization"
-          description="Upgrading legacy systems to enhance performance, security, and user experience."
+          icon={<Building className="w-8 h-8"/>}
+          title="Modernización de Sistemas"
+          description="Actualización de sistemas heredados para mejorar el rendimiento, la seguridad y la experiencia del usuario."
         />
       </div>
     </div>
   </section>
 );
 
-const IndividualServiceCard = ({ imageUrl, imageAlt, hint, title, description }: { imageUrl: string, imageAlt: string, hint: string, title: string, description: string }) => (
-    <div className="bg-white rounded-xl overflow-hidden border border-gray-100 card-hover">
-        <Image src={imageUrl} alt={imageAlt} width={600} height={400} className="w-full h-64 object-cover" data-ai-hint={hint} />
-        <div className="p-8">
-            <h4 className="text-2xl font-bold">{title}</h4>
-            <p className="mt-3 text-gray-600">{description}</p>
+const IndividualServiceCard = ({ imageUrl, imageAlt, hint, title, description, reverse = false }: { imageUrl: string, imageAlt: string, hint: string, title: string, description: string, reverse?: boolean }) => (
+    <div className={`grid md:grid-cols-2 gap-10 md:gap-20 items-center fade-in`}>
+        <div className={`rounded-2xl overflow-hidden card-hover ${reverse ? 'md:order-last' : ''}`}>
+            <Image src={imageUrl} alt={imageAlt} width={600} height={500} className="w-full h-auto object-cover" data-ai-hint={hint} />
+        </div>
+        <div className="text-left">
+            <h4 className="text-3xl font-bold">{title}</h4>
+            <p className="mt-4 text-muted-foreground text-lg">{description}</p>
+            <Button asChild variant="link" className="p-0 mt-4 text-lg text-primary font-bold">
+              <Link href="#">Saber más <ArrowRight className="ml-2" /></Link>
+            </Button>
         </div>
     </div>
 );
 
-const ServicesIndividual = () => (
-  <section id="services-individual" className="py-20 md:py-32 bg-gray-50">
+const InnovativeApps = () => (
+  <section id="apps" className="py-20 md:py-32 bg-muted">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16 fade-in" style={{ animationDelay: '0.2s' }}>
-        <h3 className="text-4xl md:text-5xl font-bold tracking-tight">For You</h3>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Intuitive, life-enhancing applications for everyday needs.</p>
+      <div className="text-center mb-16 fade-in">
+        <span className="text-primary font-bold tracking-widest uppercase">Albaidex Apps</span>
+        <h3 className="text-4xl md:text-5xl font-bold tracking-tight mt-2">Apps para tu día a día</h3>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Aplicaciones intuitivas que mejoran tu vida cotidiana.</p>
       </div>
-      <div className="grid md:grid-cols-2 gap-10 fade-in" style={{ animationDelay: '0.4s' }}>
+      <div className="space-y-20">
         <IndividualServiceCard 
-            imageUrl="https://placehold.co/600x400.png"
-            imageAlt="Ride-sharing app"
-            hint="ride sharing app"
-            title="On-Demand Transport"
-            description="Get where you need to go with seamless, reliable ride-sharing platforms inspired by the best."
+            imageUrl="https://placehold.co/600x500.png"
+            imageAlt="App de transporte"
+            hint="mobile app interface"
+            title="Transporte On-Demand"
+            description="Llega a donde necesites con plataformas de viaje compartido fiables y sin interrupciones, inspiradas en los mejores."
         />
         <IndividualServiceCard 
-            imageUrl="https://placehold.co/600x400.png"
-            imageAlt="Vacation rental platform"
-            hint="vacation rental home"
-            title="Unique Stays"
-            description="Discover and book unique accommodations with feature-rich rental platforms."
+            imageUrl="https://placehold.co/600x500.png"
+            imageAlt="Plataforma de alquileres"
+            hint="map navigation city"
+            title="Estancias Únicas"
+            description="Descubre y reserva alojamientos únicos con plataformas de alquiler ricas en funcionalidades."
+            reverse={true}
         />
       </div>
     </div>
@@ -134,24 +118,23 @@ const ServicesIndividual = () => (
 );
 
 const CaseStudies = () => (
-  <section id="case-studies" className="py-20 md:py-32 bg-white">
+  <section id="case-studies" className="py-20 md:py-32 bg-background">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16 fade-in" style={{ animationDelay: '0.2s' }}>
-        <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Proven Success</h3>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600">See how we transform industries with innovative solutions.</p>
+      <div className="text-center mb-16 fade-in">
+        <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Casos de Éxito</h3>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Descubre cómo transformamos industrias con soluciones innovadoras.</p>
       </div>
-      <div className="grid md:grid-cols-2 gap-10 items-center fade-in" style={{ animationDelay: '0.4s' }}>
-        <div className="rounded-xl overflow-hidden">
-          <Image src="https://placehold.co/600x500.png" alt="Case study" width={600} height={500} className="w-full h-auto object-cover" data-ai-hint="logistics warehouse" />
+      <div className="grid md:grid-cols-2 gap-10 items-center fade-in">
+        <div className="rounded-2xl overflow-hidden card-hover">
+          <Image src="https://placehold.co/600x500.png" alt="Caso de estudio de logística" width={600} height={500} className="w-full h-auto object-cover" data-ai-hint="logistics delivery truck" />
         </div>
-        <div className="relative md:-ml-10 bg-white p-8 md:p-12 rounded-xl shadow-xl z-10 border border-gray-100">
-          <span className="text-[hsl(var(--primary))] font-bold tracking-widest uppercase">Logistics</span>
-          <h4 className="text-3xl font-bold mt-2">Efficiency Increased by 25%</h4>
-          <p className="mt-4 text-gray-600 text-lg">We developed a custom ERP system for a major logistics client, streamlining workflows and slashing operational costs.</p>
-          <Link href="#" className="mt-6 inline-flex items-center text-[hsl(var(--primary))] font-bold group">
-            <span>Learn More</span>
-            <ArrowRightIcon />
-          </Link>
+        <div className="relative md:-ml-10 bg-card p-8 md:p-12 rounded-2xl shadow-xl z-10 border border-border/50">
+          <span className="text-primary font-bold tracking-widest uppercase">Logística</span>
+          <h4 className="text-3xl font-bold mt-2">Eficiencia Aumentada en 25%</h4>
+          <p className="mt-4 text-muted-foreground text-lg">Desarrollamos un sistema ERP a medida para un cliente logístico, optimizando flujos de trabajo y reduciendo costes.</p>
+          <Button asChild variant="link" className="p-0 mt-6 text-lg text-primary font-bold">
+            <Link href="#">Ver estudio de caso <ArrowRight className="ml-2" /></Link>
+          </Button>
         </div>
       </div>
     </div>
@@ -170,27 +153,27 @@ const technologies = [
 ];
 
 const TechnologySlider = () => (
-    <section className="py-20 md:py-32 bg-gray-50">
+    <section className="py-20 md:py-32 bg-muted">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16 fade-in" style={{ animationDelay: '0.2s' }}>
-                <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Our Technology Stack</h3>
-                <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600">We use modern, reliable technologies to build high-quality solutions.</p>
+            <div className="text-center mb-16 fade-in">
+                <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Nuestro Ecosistema Tecnológico</h3>
+                <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Usamos tecnologías modernas y fiables para construir soluciones de alta calidad.</p>
             </div>
-            <div className="fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="fade-in">
                 <Carousel
                     opts={{
                         align: "start",
                         loop: true,
                     }}
-                    className="w-full max-w-5xl mx-auto"
+                    className="w-full max-w-6xl mx-auto"
                 >
                     <CarouselContent className="-ml-4">
                         {technologies.map((tech, index) => (
-                            <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+                            <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4 xl:basis-1/6">
                                 <div className="p-1">
-                                    <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-100 h-40 card-hover">
-                                        <div className="h-12 w-12 mb-4 text-gray-700">{tech.icon}</div>
-                                        <p className="font-semibold text-gray-800 text-center">{tech.name}</p>
+                                    <div className="flex flex-col items-center justify-center p-6 bg-card rounded-2xl border border-border/50 h-48 card-hover">
+                                        <div className="h-16 w-16 mb-4 text-foreground/80">{tech.icon}</div>
+                                        <p className="font-semibold text-foreground text-center">{tech.name}</p>
                                     </div>
                                 </div>
                             </CarouselItem>
@@ -205,13 +188,13 @@ const TechnologySlider = () => (
 );
 
 const Contact = () => (
-    <section id="contact" className="bg-white">
+    <section id="contact" className="bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-            <div className="max-w-3xl mx-auto text-center fade-in" style={{ animationDelay: '0.2s' }}>
-                <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Ready to build something amazing?</h3>
-                <p className="mt-4 text-lg text-gray-600">Let's talk about your next project.</p>
+            <div className="max-w-3xl mx-auto text-center fade-in">
+                <h3 className="text-4xl md:text-5xl font-bold tracking-tight">¿Listo para construir algo increíble?</h3>
+                <p className="mt-4 text-lg text-muted-foreground">Hablemos de tu próximo proyecto.</p>
             </div>
-            <div className="fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="fade-in mt-8">
               <ContactForm />
             </div>
         </div>
@@ -220,12 +203,12 @@ const Contact = () => (
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-grow">
         <Hero />
-        <ServicesBusiness />
-        <ServicesIndividual />
+        <EnterpriseSolutions />
+        <InnovativeApps />
         <CaseStudies />
         <TechnologySlider />
         <Contact />
