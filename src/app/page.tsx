@@ -98,8 +98,8 @@ const TechnologySlider = () => {
                 <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
                     {extendedTechnologies.map((tech, index) => (
                         <div key={index} className="flex-shrink-0 w-64 px-4">
-                            <div className="flex flex-col items-center justify-center p-6 bg-card rounded-2xl border border-border/50 h-48">
-                                <div className="relative h-20 w-full mb-4">
+                            <div className="flex flex-col items-center justify-center p-6 bg-card rounded-2xl border border-border/50 h-32">
+                                <div className="relative h-20 w-full">
                                   <Image 
                                       src={tech.image} 
                                       alt={tech.name} 
@@ -108,7 +108,6 @@ const TechnologySlider = () => {
                                       data-ai-hint={tech.hint}
                                   />
                                 </div>
-                                <p className="font-semibold text-foreground text-center">{tech.name}</p>
                             </div>
                         </div>
                     ))}
