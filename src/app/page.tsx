@@ -28,8 +28,8 @@ import {
 // All dynamic page content is centralized here for easy editing.
 const pageData = {
   hero: {
-    title: "Software inteligente, desarrollado con inteligencia.",
-    subtitle: "Creamos soluciones potentes y elegantes para empresas e individuos con visión de futuro.",
+    title: "Hacemos software, no magia.",
+    subtitle: "Convertimos tus ideas en soluciones de software a medida, potentes y eficientes para tu negocio.",
     image: "/img/img/bg.jpg",
     hint: "background"
   },
