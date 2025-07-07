@@ -174,7 +174,7 @@ const Philosophy = () => (
       <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mt-12 fade-in">
         <Card className="card-hover flex flex-col text-center items-center p-6">
           <CardHeader>
-            <div className="bg-background rounded-full p-4 mb-4">
+            <div className="bg-muted rounded-full p-4 mb-4">
               <Github className="w-10 h-10 text-primary" />
             </div>
             <CardTitle>Open Code</CardTitle>
@@ -185,7 +185,7 @@ const Philosophy = () => (
         </Card>
         <Card className="card-hover flex flex-col text-center items-center p-6">
           <CardHeader>
-            <div className="bg-background rounded-full p-4 mb-4">
+            <div className="bg-muted rounded-full p-4 mb-4">
               <Sparkles className="w-10 h-10 text-primary" />
             </div>
             <CardTitle>IA Esencial</CardTitle>
@@ -196,7 +196,7 @@ const Philosophy = () => (
         </Card>
         <Card className="card-hover flex flex-col text-center items-center p-6">
           <CardHeader>
-            <div className="bg-background rounded-full p-4 mb-4">
+            <div className="bg-muted rounded-full p-4 mb-4">
               <Zap className="w-10 h-10 text-primary" />
             </div>
             <CardTitle>Eficiencia Radical</CardTitle>
