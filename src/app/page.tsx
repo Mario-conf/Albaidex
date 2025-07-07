@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/layout/header";
@@ -50,13 +51,13 @@ const Services = () => (
         <h2 className="text-3xl md:text-4xl font-bold font-headline">Nuestros Servicios para Empresas</h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">Servicios de desarrollo de ciclo completo para llevar tu proyecto de la idea al lanzamiento.</p>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid md:grid-cols-2 gap-10">
         {services.map((service, index) => (
-          <div key={index} className="flex flex-col items-center text-center p-6 transition-transform transform hover:-translate-y-2">
+          <Card key={index} className="flex flex-col items-center text-center p-8 transition-all transform hover:-translate-y-2 hover:shadow-primary/20 hover:shadow-lg border-transparent hover:border-primary/30">
             <div className="mb-4">{service.icon}</div>
             <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
             <p className="text-muted-foreground">{service.description}</p>
-          </div>
+          </Card>
         ))}
       </div>
     </div>
@@ -81,41 +82,13 @@ const freeApps = [
   },
 ];
 
-const FreeApps = () => (
-  <section id="free-apps" className="py-20 md:py-24">
-    <div className="container mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold font-headline">Apps Gratuitas para Todos</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">Creemos en el poder de la tecnología para mejorar vidas, una app a la vez.</p>
-      </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {freeApps.map((app, index) => (
-          <Card key={index} className="flex flex-col overflow-hidden transition-shadow hover:shadow-lg bg-card">
-            <CardHeader className="flex flex-row items-center gap-4 pb-4">
-              {app.icon}
-              <CardTitle className="text-2xl">{app.title}</CardTitle>
-            </CardHeader>
-            <CardContent className="flex-grow">
-              <p className="text-muted-foreground">{app.description}</p>
-            </CardContent>
-            <CardFooter>
-              <Button variant="outline" className="w-full">
-                Descargar Ahora
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
-    </div>
-  </section>
-);
 
 const blogPosts = [
   {
     image: "https://placehold.co/600x400.png",
     hint: "granada alhambra",
     title: "Impulsando la Innovación: El Ecosistema Tecnológico de Granada",
-    excerpt: "Descubre cómo Granada se está convirtiendo en un hub tecnológico clave en el sur de Europa.",
+    excerpt: "Descubre cómo Granada se está convirtiendo en un hub tecnológico clave en el sur de Europa, combinando historia, cultura y tecnología de vanguardia para fomentar un entorno de startups vibrante y en crecimiento.",
   },
   {
     image: "https://placehold.co/600x400.png",
@@ -132,49 +105,95 @@ const blogPosts = [
 ];
 
 const Blog = () => (
-  <section id="blog" className="bg-card py-20 md:py-24">
-    <div className="container mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold font-headline">Desde Nuestro Blog</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">Ideas, noticias y actualizaciones del equipo de Albaidex.</p>
-      </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogPosts.map((post, index) => (
-          <Card key={index} className="flex flex-col overflow-hidden transition-shadow hover:shadow-lg bg-card">
-            <CardHeader className="p-0">
-              <Image src={post.image} alt={post.title} width={600} height={400} className="w-full h-48 object-cover" data-ai-hint={post.hint} />
-            </CardHeader>
-            <CardContent className="flex-grow p-6">
-              <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
-              <p className="text-muted-foreground">{post.excerpt}</p>
-            </CardContent>
-            <CardFooter className="p-6 pt-0">
-              <Button variant="link" className="p-0 h-auto" asChild>
-                <Link href="#">Leer Más <ArrowRight className="ml-2 h-4 w-4" /></Link>
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
-    </div>
-  </section>
+    <section id="blog" className="bg-card py-20 md:py-24">
+        <div className="container mx-auto">
+            <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold font-headline">Desde Nuestro Blog</h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">Ideas, noticias y actualizaciones del equipo de Albaidex.</p>
+            </div>
+            <div className="grid lg:grid-cols-3 gap-8 items-start">
+                <Card className="lg:col-span-2 flex flex-col overflow-hidden transition-shadow hover:shadow-lg h-full">
+                    <CardHeader className="p-0">
+                        <Image src={blogPosts[0].image} alt={blogPosts[0].title} width={800} height={450} className="w-full h-64 object-cover" data-ai-hint={blogPosts[0].hint} />
+                    </CardHeader>
+                    <CardContent className="flex-grow p-6">
+                        <p className="text-sm text-primary font-medium mb-2">Destacado</p>
+                        <h3 className="text-2xl font-semibold mb-3">{blogPosts[0].title}</h3>
+                        <p className="text-muted-foreground">{blogPosts[0].excerpt}</p>
+                    </CardContent>
+                    <CardFooter className="p-6 pt-0">
+                        <Button variant="link" className="p-0 h-auto" asChild>
+                            <Link href="#">Leer Más <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                        </Button>
+                    </CardFooter>
+                </Card>
+
+                <div className="space-y-8">
+                    {blogPosts.slice(1).map((post, index) => (
+                        <Card key={index} className="flex flex-col overflow-hidden transition-shadow hover:shadow-lg">
+                            <CardHeader className="p-0">
+                                <Image src={post.image} alt={post.title} width={600} height={400} className="w-full h-40 object-cover" data-ai-hint={post.hint} />
+                            </CardHeader>
+                            <CardContent className="flex-grow p-4">
+                                <h3 className="text-lg font-semibold mb-2">{post.title}</h3>
+                                <p className="text-sm text-muted-foreground line-clamp-2">{post.excerpt}</p>
+                            </CardContent>
+                            <CardFooter className="p-4 pt-0">
+                                <Button variant="link" size="sm" className="p-0 h-auto text-sm" asChild>
+                                    <Link href="#">Leer Más <ArrowRight className="ml-1 h-3 w-3" /></Link>
+                                </Button>
+                            </CardFooter>
+                        </Card>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </section>
 );
 
-const TaglineSection = () => (
-  <section id="ai-tool" className="py-20 md:py-24">
-    <div className="container mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold font-headline flex items-center justify-center gap-3">
-          <Sparkles className="h-8 w-8 text-primary" />
-          Generador de Lemas con IA
-        </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">
-          ¿Atascado sin un lema? Describe tu app y deja que nuestra IA genere opciones pegadizas para ti.
-        </p>
-      </div>
-      <TaglineGenerator />
-    </div>
-  </section>
+
+const FreeTools = () => (
+    <section id="free-tools" className="py-20 md:py-24">
+        <div className="container mx-auto">
+            <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold font-headline">Herramientas Gratuitas</h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">
+                    Explora nuestras apps y herramientas con IA para mejorar tu día a día y potenciar tus ideas.
+                </p>
+            </div>
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+                <div>
+                    <h3 className="text-2xl font-semibold mb-6">Apps para Todos</h3>
+                    <div className="space-y-6">
+                        {freeApps.map((app, index) => (
+                            <Card key={index} className="flex items-center gap-6 p-4 bg-card transition-shadow hover:shadow-lg">
+                                {app.icon}
+                                <div className="flex-grow">
+                                    <h4 className="font-bold">{app.title}</h4>
+                                    <p className="text-sm text-muted-foreground">{app.description}</p>
+                                </div>
+                                <Button variant="ghost" size="sm" asChild className="flex-shrink-0">
+                                    <Link href="#">
+                                        Probar <ArrowRight className="ml-2 h-4 w-4" />
+                                    </Link>
+                                </Button>
+                            </Card>
+                        ))}
+                    </div>
+                </div>
+
+                <div>
+                    <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3">
+                        <Sparkles className="h-7 w-7 text-primary" />
+                        Generador de Lemas con IA
+                    </h3>
+                    <div className="bg-card rounded-lg p-1">
+                      <TaglineGenerator />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 );
 
 
@@ -199,9 +218,8 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Services />
-        <FreeApps />
+        <FreeTools />
         <Blog />
-        <TaglineSection />
         <ContactSection />
       </main>
       <Footer />
