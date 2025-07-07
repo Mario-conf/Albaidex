@@ -1,3 +1,7 @@
+
+'use client';
+
+import { useState } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/layout/header";
@@ -44,35 +48,6 @@ const ServiceCard = ({ icon, title, description }: { icon: React.ReactNode, titl
     </div>
 );
 
-const EnterpriseSolutions = () => (
-  <section id="enterprise" className="py-20 md:py-32 bg-background">
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16 fade-in">
-        <span className="text-primary font-bold tracking-widest uppercase">Albaidex Enterprise</span>
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-2">Soluciones para tu Empresa</h2>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Impulsando el crecimiento y la eficiencia con tecnología de vanguardia.</p>
-      </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-        <ServiceCard 
-          icon={<Layers className="w-8 h-8"/>}
-          title="Software a Medida"
-          description="Aplicaciones a medida construidas desde cero para satisfacer las necesidades y objetivos de tu negocio."
-        />
-        <ServiceCard 
-          icon={<Briefcase className="w-8 h-8"/>}
-          title="Consultoría Tecnológica"
-          description="Asesoramiento estratégico experto para alinear tu tecnología con tus objetivos empresariales para un impacto máximo."
-        />
-        <ServiceCard 
-          icon={<Building className="w-8 h-8"/>}
-          title="Modernización de Sistemas"
-          description="Actualización de sistemas heredados para mejorar el rendimiento, la seguridad y la experiencia del usuario."
-        />
-      </div>
-    </div>
-  </section>
-);
-
 const IndividualServiceCard = ({ imageUrl, imageAlt, hint, title, description, reverse = false }: { imageUrl: string, imageAlt: string, hint: string, title: string, description: string, reverse?: boolean }) => (
     <div className={`grid md:grid-cols-2 gap-10 md:gap-20 items-center fade-in`}>
         <div className={`rounded-2xl overflow-hidden card-hover ${reverse ? 'md:order-last' : ''}`}>
@@ -88,43 +63,14 @@ const IndividualServiceCard = ({ imageUrl, imageAlt, hint, title, description, r
     </div>
 );
 
-const InnovativeApps = () => (
-  <section id="apps" className="py-20 md:py-32 bg-muted">
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16 fade-in">
-        <span className="text-primary font-bold tracking-widest uppercase">Albaidex Apps</span>
-        <h3 className="text-4xl md:text-5xl font-bold tracking-tight mt-2">Apps para tu día a día</h3>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Aplicaciones intuitivas que mejoran tu vida cotidiana.</p>
-      </div>
-      <div className="space-y-20">
-        <IndividualServiceCard 
-            imageUrl="https://placehold.co/600x500.png"
-            imageAlt="App de transporte"
-            hint="mobile app interface"
-            title="Transporte On-Demand"
-            description="Llega a donde necesites con plataformas de viaje compartido fiables y sin interrupciones, inspiradas en los mejores."
-        />
-        <IndividualServiceCard 
-            imageUrl="https://placehold.co/600x500.png"
-            imageAlt="Plataforma de alquileres"
-            hint="map navigation city"
-            title="Estancias Únicas"
-            description="Descubre y reserva alojamientos únicos con plataformas de alquiler ricas en funcionalidades."
-            reverse={true}
-        />
-      </div>
-    </div>
-  </section>
-);
-
 const CaseStudies = () => (
-  <section id="case-studies" className="py-20 md:py-32 bg-background">
+  <section id="case-studies" className="py-20 md:py-32 bg-muted fade-in">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16 fade-in">
+      <div className="text-center mb-16">
         <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Casos de Éxito</h3>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Descubre cómo transformamos industrias con soluciones innovadoras.</p>
       </div>
-      <div className="grid md:grid-cols-2 gap-10 items-center fade-in">
+      <div className="grid md:grid-cols-2 gap-10 items-center">
         <div className="rounded-2xl overflow-hidden card-hover">
           <Image src="https://placehold.co/600x500.png" alt="Caso de estudio de logística" width={600} height={500} className="w-full h-auto object-cover" data-ai-hint="logistics delivery truck" />
         </div>
@@ -153,7 +99,7 @@ const technologies = [
 ];
 
 const TechnologySlider = () => (
-    <section className="py-20 md:py-32 bg-muted">
+    <section className="py-20 md:py-32 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 fade-in">
                 <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Nuestro Ecosistema Tecnológico</h3>
@@ -188,7 +134,7 @@ const TechnologySlider = () => (
 );
 
 const Contact = () => (
-    <section id="contact" className="bg-background">
+    <section id="contact" className="bg-muted">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
             <div className="max-w-3xl mx-auto text-center fade-in">
                 <h3 className="text-4xl md:text-5xl font-bold tracking-tight">¿Listo para construir algo increíble?</h3>
@@ -202,14 +148,85 @@ const Contact = () => (
 );
 
 export default function Home() {
+  const [activeView, setActiveView] = useState<'enterprise' | 'apps'>('enterprise');
+
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-grow">
         <Hero />
-        <EnterpriseSolutions />
-        <InnovativeApps />
-        <CaseStudies />
+        
+        <section id="soluciones" className="py-20 md:py-32 bg-background">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16 fade-in">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Soluciones a tu medida</h2>
+              <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+                {activeView === 'enterprise'
+                  ? 'Impulsando el crecimiento y la eficiencia con tecnología de vanguardia.'
+                  : 'Aplicaciones intuitivas que mejoran tu vida cotidiana.'}
+              </p>
+              <div className="mt-8 flex justify-center">
+                <div className="bg-muted p-1 rounded-full flex items-center gap-2">
+                  <Button
+                    onClick={() => setActiveView('enterprise')}
+                    variant={activeView === 'enterprise' ? 'default' : 'ghost'}
+                    className="rounded-full px-8 py-2.5 transition-all duration-300"
+                  >
+                    Enterprise
+                  </Button>
+                  <Button
+                    onClick={() => setActiveView('apps')}
+                    variant={activeView === 'apps' ? 'default' : 'ghost'}
+                    className="rounded-full px-8 py-2.5 transition-all duration-300"
+                  >
+                    Apps
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {activeView === 'enterprise' ? (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <ServiceCard 
+                  icon={<Layers className="w-8 h-8"/>}
+                  title="Software a Medida"
+                  description="Aplicaciones a medida construidas desde cero para satisfacer las necesidades y objetivos de tu negocio."
+                />
+                <ServiceCard 
+                  icon={<Briefcase className="w-8 h-8"/>}
+                  title="Consultoría Tecnológica"
+                  description="Asesoramiento estratégico experto para alinear tu tecnología con tus objetivos empresariales para un impacto máximo."
+                />
+                <ServiceCard 
+                  icon={<Building className="w-8 h-8"/>}
+                  title="Modernización de Sistemas"
+                  description="Actualización de sistemas heredados para mejorar el rendimiento, la seguridad y la experiencia del usuario."
+                />
+              </div>
+            ) : (
+              <div className="space-y-20">
+                <IndividualServiceCard 
+                    imageUrl="https://placehold.co/600x500.png"
+                    imageAlt="App de transporte"
+                    hint="mobile app interface"
+                    title="Transporte On-Demand"
+                    description="Llega a donde necesites con plataformas de viaje compartido fiables y sin interrupciones, inspiradas en los mejores."
+                />
+                <IndividualServiceCard 
+                    imageUrl="https://placehold.co/600x500.png"
+                    imageAlt="Plataforma de alquileres"
+                    hint="map navigation city"
+                    title="Estancias Únicas"
+                    description="Descubre y reserva alojamientos únicos con plataformas de alquiler ricas en funcionalidades."
+                    reverse={true}
+                />
+              </div>
+            )}
+          </div>
+        </section>
+        
+        {activeView === 'enterprise' && <CaseStudies />}
+        
         <TechnologySlider />
         <Contact />
       </main>

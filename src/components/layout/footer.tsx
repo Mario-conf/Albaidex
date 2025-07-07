@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 
 const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
@@ -18,8 +19,8 @@ export const Footer = () => {
           <div className="col-span-1">
             <h4 className="font-semibold text-foreground">Soluciones</h4>
             <nav className="mt-4 space-y-2">
-              <NavLink href="#enterprise">Enterprise</NavLink>
-              <NavLink href="#apps">Apps</NavLink>
+              <NavLink href="#soluciones">Enterprise</NavLink>
+              <NavLink href="#soluciones">Apps</NavLink>
               <NavLink href="#case-studies">Proyectos</NavLink>
             </nav>
           </div>
