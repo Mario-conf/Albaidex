@@ -115,7 +115,7 @@ const pageData = {
 // Page Sections
 const Hero = () => (
   <section className="relative h-screen flex items-center justify-center text-center text-white bg-black">
-    <Image src={pageData.hero.image} alt="Equipo de Albaidex colaborando en un proyecto" layout="fill" objectFit="cover" className="opacity-40" data-ai-hint={pageData.hero.hint}/>
+    <Image src={pageData.hero.image} alt="Equipo de Albaidex colaborando en un proyecto" fill className="object-cover opacity-40" data-ai-hint={pageData.hero.hint}/>
     <div className="relative z-10 p-4 fade-in">
         <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-tight text-white">{pageData.hero.title}</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-200">{pageData.hero.subtitle}</p>
@@ -135,7 +135,7 @@ const TechnologySlider = () => {
         <section id="tecnologia" className="py-20 md:py-32 bg-background overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16 fade-in">
-                    <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Nuestro Ecosistema Tecnológico</h3>
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Nuestro Ecosistema Tecnológico</h2>
                     <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Usamos tecnologías modernas y fiables para construir soluciones de alta calidad.</p>
                 </div>
             </div>
@@ -148,8 +148,8 @@ const TechnologySlider = () => {
                                   <Image 
                                       src={tech.image} 
                                       alt={tech.name} 
-                                      layout="fill"
-                                      objectFit="contain"
+                                      fill
+                                      className="object-contain"
                                       data-ai-hint={tech.hint}
                                   />
                                 </div>
@@ -307,14 +307,14 @@ export default function Home() {
                   <Button
                     onClick={() => setActiveView('enterprise')}
                     variant={activeView === 'enterprise' ? 'default' : 'ghost'}
-                    className="rounded-full px-8 py-2.5 transition-all duration-300"
+                    className="rounded-full px-4 sm:px-8 py-2.5 transition-all duration-300"
                   >
                     Enterprise
                   </Button>
                   <Button
                     onClick={() => setActiveView('apps')}
                     variant={activeView === 'apps' ? 'default' : 'ghost'}
-                    className="rounded-full px-8 py-2.5 transition-all duration-300"
+                    className="rounded-full px-4 sm:px-8 py-2.5 transition-all duration-300"
                   >
                     Apps
                   </Button>
@@ -351,7 +351,7 @@ export default function Home() {
                       />
                     </Link>
                     <CardHeader>
-                      <CardTitle>{solution.title}</CardTitle>
+                      <h3 className="text-2xl font-semibold leading-none tracking-tight">{solution.title}</h3>
                     </CardHeader>
                     <CardContent className="flex-grow">
                       <p className="text-muted-foreground">{solution.description}</p>

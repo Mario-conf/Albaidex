@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: 'Albaidex | Software that moves you',
-  description: 'We build powerful, elegant solutions for visionary businesses and individuals.',
+  title: 'Albaidex | Desarrollo de Software a Medida',
+  description: 'Convertimos tus ideas en soluciones de software a medida, potentes y eficientes para tu negocio.',
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="es" className="!scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

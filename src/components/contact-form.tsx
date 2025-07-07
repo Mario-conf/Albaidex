@@ -49,8 +49,8 @@ export function ContactForm() {
   return (
     <Card className="max-w-3xl mx-auto shadow-lg">
       <CardHeader className="text-center p-8">
-        <CardTitle className="text-4xl md:text-5xl font-bold tracking-tight">¿Listo para construir algo increíble?</CardTitle>
-        <CardDescription className="mt-4 text-lg text-muted-foreground">Hablemos de tu próximo proyecto.</CardDescription>
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">¿Listo para construir algo increíble?</h2>
+        <p className="mt-4 text-lg text-muted-foreground">Hablemos de tu próximo proyecto.</p>
       </CardHeader>
       <CardContent className="p-8 pt-0">
         <Form {...form}>
