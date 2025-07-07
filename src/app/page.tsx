@@ -37,32 +37,32 @@ const pageData = {
     {
       title: "Desarrollo a Medida",
       description: "Creamos software personalizado y escalable que se adapta a las necesidades específicas de tu empresa.",
-      icon: <Puzzle className="w-8 h-8 text-primary" />
+      icon: <Puzzle className="w-10 h-10 text-primary" />
     },
     {
       title: "Automatización de Procesos",
       description: "Optimizamos tus flujos de trabajo con soluciones de automatización inteligentes para aumentar la eficiencia.",
-      icon: <Bot className="w-8 h-8 text-primary" />
+      icon: <Bot className="w-10 h-10 text-primary" />
     },
     {
       title: "Consultoría Tecnológica",
       description: "Te ayudamos a alinear tu estrategia tecnológica con tus objetivos de negocio para un crecimiento sostenible.",
-      icon: <TrendingUp className="w-8 h-8 text-primary" />
+      icon: <TrendingUp className="w-10 h-10 text-primary" />
     },
     {
       title: "Adaptación de Sistemas",
       description: "Personalizamos e integramos aplicaciones internas para que funcionen perfectamente en tu ecosistema.",
-      icon: <Cog className="w-8 h-8 text-primary" />
+      icon: <Cog className="w-10 h-10 text-primary" />
     },
     {
       title: "IA Generativa",
       description: "Implementamos soluciones con IA Generativa para potenciar la innovación y la capacidad de tu negocio.",
-      icon: <Sparkles className="w-8 h-8 text-primary" />
+      icon: <Sparkles className="w-10 h-10 text-primary" />
     },
     {
       title: "Digitalización",
       description: "Modernizamos tus sistemas y procesos para impulsar tu transformación digital de forma segura.",
-      icon: <Server className="w-8 h-8 text-primary" />
+      icon: <Server className="w-10 h-10 text-primary" />
     }
   ],
   appSolutions: [
@@ -174,7 +174,7 @@ const Philosophy = () => (
       <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mt-12 fade-in">
         <Card className="card-hover flex flex-col text-center items-center p-6">
           <CardHeader>
-            <div className="bg-muted rounded-full p-4 mb-4">
+            <div className="bg-muted rounded-full w-20 h-20 flex items-center justify-center mb-4">
               <Github className="w-10 h-10 text-primary" />
             </div>
             <CardTitle>Open Code</CardTitle>
@@ -185,7 +185,7 @@ const Philosophy = () => (
         </Card>
         <Card className="card-hover flex flex-col text-center items-center p-6">
           <CardHeader>
-            <div className="bg-muted rounded-full p-4 mb-4">
+            <div className="bg-muted rounded-full w-20 h-20 flex items-center justify-center mb-4">
               <Sparkles className="w-10 h-10 text-primary" />
             </div>
             <CardTitle>IA Esencial</CardTitle>
@@ -196,7 +196,7 @@ const Philosophy = () => (
         </Card>
         <Card className="card-hover flex flex-col text-center items-center p-6">
           <CardHeader>
-            <div className="bg-muted rounded-full p-4 mb-4">
+            <div className="bg-muted rounded-full w-20 h-20 flex items-center justify-center mb-4">
               <Zap className="w-10 h-10 text-primary" />
             </div>
             <CardTitle>Eficiencia Radical</CardTitle>
@@ -222,7 +222,7 @@ const Scope = () => (
       <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mt-12 fade-in max-w-4xl mx-auto">
         <Card className="card-hover flex flex-col text-center items-center p-6">
           <CardHeader>
-            <div className="bg-muted rounded-full p-4 mb-4">
+            <div className="bg-muted rounded-full w-20 h-20 flex items-center justify-center mb-4">
               <Globe className="w-10 h-10 text-primary" />
             </div>
             <CardTitle>Clientes Internacionales</CardTitle>
@@ -233,7 +233,7 @@ const Scope = () => (
         </Card>
         <Card className="card-hover flex flex-col text-center items-center p-6">
           <CardHeader>
-            <div className="bg-muted rounded-full p-4 mb-4">
+            <div className="bg-muted rounded-full w-20 h-20 flex items-center justify-center mb-4">
               <Wifi className="w-10 h-10 text-primary" />
             </div>
             <CardTitle>Trabajo 100% Remoto</CardTitle>
@@ -337,7 +337,7 @@ export default function Home() {
                 {pageData.enterpriseSolutions.map((solution) => (
                   <Card key={solution.title} className="card-hover flex flex-col text-center items-center p-6">
                     <CardHeader>
-                      <div className="bg-muted rounded-full p-4 mb-4">
+                      <div className="bg-muted rounded-full w-20 h-20 flex items-center justify-center mb-4">
                         {solution.icon}
                       </div>
                       <CardTitle>{solution.title}</CardTitle>
@@ -397,5 +397,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
