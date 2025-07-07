@@ -9,9 +9,9 @@ import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Flame, BrainCircuit, FileCode, Hexagon, Triangle, Wind, Network, Puzzle, TrendingUp, RefreshCw } from "lucide-react";
+import { Puzzle, TrendingUp, RefreshCw, Network, Wind, Flame, BrainCircuit, FileCode, Hexagon, Triangle } from "lucide-react";
 
-// Custom Icons
+// Custom Icon for React
 const ReactIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-11.5 -10.23174 23 20.46348" className="h-full w-full" fill="currentColor">
         <title>React</title>
@@ -24,73 +24,7 @@ const ReactIcon = () => (
     </svg>
 );
 
-// Page Sections
-const Hero = () => (
-  <section className="relative h-screen flex items-center justify-center text-center text-white bg-black">
-    <Image src="https://placehold.co/1920x1080.png" alt="Equipo de Albaidex colaborando en un proyecto" layout="fill" objectFit="cover" className="opacity-40" data-ai-hint="modern office collaboration"/>
-    <div className="relative z-10 p-4 fade-in">
-        <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight text-white">Software que te impulsa.</h1>
-        <p className="mt-6 max-w-2xl mx-auto text-xl md:text-2xl text-gray-200">Creamos soluciones potentes y elegantes para empresas e individuos con visión de futuro.</p>
-        <Button asChild size="lg" className="mt-10 h-auto bg-primary text-primary-foreground font-bold py-4 px-10 rounded-full hover:bg-primary/90 transition-all duration-300 text-lg shadow-lg">
-            <Link href="#contact">Comienza tu Proyecto</Link>
-        </Button>
-    </div>
-  </section>
-);
-
-const technologies = [
-  { name: "Next.js", icon: <Network className="w-full h-full" /> },
-  { name: "React", icon: <ReactIcon /> },
-  { name: "Tailwind CSS", icon: <Wind className="w-full h-full" /> },
-  { name: "Firebase", icon: <Flame className="w-full h-full" /> },
-  { name: "Genkit", icon: <BrainCircuit className="w-full h-full" /> },
-  { name: "TypeScript", icon: <FileCode className="w-full h-full" /> },
-  { name: "Node.js", icon: <Hexagon className="w-full h-full" fill="currentColor" /> },
-  { name: "Vercel", icon: <Triangle className="w-full h-full" fill="currentColor" /> },
-];
-
-const TechnologySlider = () => {
-    // Duplicating the array for a seamless loop
-    const extendedTechnologies = [...technologies, ...technologies];
-
-    return (
-        <section className="py-20 md:py-32 bg-background overflow-hidden">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16 fade-in">
-                    <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Nuestro Ecosistema Tecnológico</h3>
-                    <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Usamos tecnologías modernas y fiables para construir soluciones de alta calidad.</p>
-                </div>
-            </div>
-            <div className="relative fade-in group">
-                <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
-                    {extendedTechnologies.map((tech, index) => (
-                        <div key={index} className="flex-shrink-0 w-64 px-4">
-                            <div className="flex flex-col items-center justify-center p-6 bg-card rounded-2xl border border-border/50 h-48">
-                                <div className="h-16 w-16 mb-4 text-foreground/80">{tech.icon}</div>
-                                <p className="font-semibold text-foreground text-center">{tech.name}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-};
-
-const Contact = () => (
-    <section id="contact" className="bg-muted">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-            <div className="max-w-3xl mx-auto text-center fade-in">
-                <h3 className="text-4xl md:text-5xl font-bold tracking-tight">¿Listo para construir algo increíble?</h3>
-                <p className="mt-4 text-lg text-muted-foreground">Hablemos de tu próximo proyecto.</p>
-            </div>
-            <div className="fade-in mt-8">
-              <ContactForm />
-            </div>
-        </div>
-    </section>
-);
-
+// Data for dynamic sections
 const enterpriseSolutions = [
   {
     title: "Software a Medida",
@@ -135,6 +69,73 @@ const appSolutions = [
     hint: "fitness workout"
   }
 ];
+
+const technologies = [
+  { name: "Next.js", icon: <Network className="w-full h-full" /> },
+  { name: "React", icon: <ReactIcon /> },
+  { name: "Tailwind CSS", icon: <Wind className="w-full h-full" /> },
+  { name: "Firebase", icon: <Flame className="w-full h-full" /> },
+  { name: "Genkit", icon: <BrainCircuit className="w-full h-full" /> },
+  { name: "TypeScript", icon: <FileCode className="w-full h-full" /> },
+  { name: "Node.js", icon: <Hexagon className="w-full h-full" fill="currentColor" /> },
+  { name: "Vercel", icon: <Triangle className="w-full h-full" fill="currentColor" /> },
+];
+
+
+// Page Sections
+const Hero = () => (
+  <section className="relative h-screen flex items-center justify-center text-center text-white bg-black">
+    <Image src="https://placehold.co/1920x1080.png" alt="Equipo de Albaidex colaborando en un proyecto" layout="fill" objectFit="cover" className="opacity-40" data-ai-hint="modern office collaboration"/>
+    <div className="relative z-10 p-4 fade-in">
+        <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight text-white">Software que te impulsa.</h1>
+        <p className="mt-6 max-w-2xl mx-auto text-xl md:text-2xl text-gray-200">Creamos soluciones potentes y elegantes para empresas e individuos con visión de futuro.</p>
+        <Button asChild size="lg" className="mt-10 h-auto bg-primary text-primary-foreground font-bold py-4 px-10 rounded-full hover:bg-primary/90 transition-all duration-300 text-lg shadow-lg">
+            <Link href="#contact">Comienza tu Proyecto</Link>
+        </Button>
+    </div>
+  </section>
+);
+
+const TechnologySlider = () => {
+    const extendedTechnologies = [...technologies, ...technologies];
+
+    return (
+        <section className="py-20 md:py-32 bg-background overflow-hidden">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-16 fade-in">
+                    <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Nuestro Ecosistema Tecnológico</h3>
+                    <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Usamos tecnologías modernas y fiables para construir soluciones de alta calidad.</p>
+                </div>
+            </div>
+            <div className="relative fade-in group">
+                <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
+                    {extendedTechnologies.map((tech, index) => (
+                        <div key={index} className="flex-shrink-0 w-64 px-4">
+                            <div className="flex flex-col items-center justify-center p-6 bg-card rounded-2xl border border-border/50 h-48">
+                                <div className="h-16 w-16 mb-4 text-foreground/80">{tech.icon}</div>
+                                <p className="font-semibold text-foreground text-center">{tech.name}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+const Contact = () => (
+    <section id="contact" className="bg-muted">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+            <div className="max-w-3xl mx-auto text-center fade-in">
+                <h3 className="text-4xl md:text-5xl font-bold tracking-tight">¿Listo para construir algo increíble?</h3>
+                <p className="mt-4 text-lg text-muted-foreground">Hablemos de tu próximo proyecto.</p>
+            </div>
+            <div className="fade-in mt-8">
+              <ContactForm />
+            </div>
+        </div>
+    </section>
+);
 
 export default function Home() {
   const [activeView, setActiveView] = useState<'enterprise' | 'apps'>('enterprise');
@@ -222,6 +223,3 @@ export default function Home() {
     </div>
   );
 }
-    
-
-    

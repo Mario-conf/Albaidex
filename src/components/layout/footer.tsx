@@ -26,8 +26,6 @@ export const Footer = () => {
           <div className="col-span-1">
             <h4 className="font-semibold text-foreground">Compañía</h4>
             <nav className="mt-4 space-y-2">
-              <NavLink href="#">Sobre nosotros</NavLink>
-              <NavLink href="#">Carreras</NavLink>
               <NavLink href="#contact">Contacto</NavLink>
             </nav>
           </div>
