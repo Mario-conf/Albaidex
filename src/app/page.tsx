@@ -38,16 +38,6 @@ const Hero = () => (
   </section>
 );
 
-const ServiceCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
-    <div className="bg-card p-8 rounded-2xl border border-border/50 card-hover fade-in">
-        <div className="flex items-center justify-center h-16 w-16 bg-muted rounded-full mb-6 text-primary">
-            {icon}
-        </div>
-        <h4 className="text-2xl font-bold text-foreground">{title}</h4>
-        <p className="mt-3 text-muted-foreground">{description}</p>
-    </div>
-);
-
 const IndividualServiceCard = ({ imageUrl, imageAlt, hint, title, description, reverse = false }: { imageUrl: string, imageAlt: string, hint: string, title: string, description: string, reverse?: boolean }) => (
     <div className={`grid md:grid-cols-2 gap-10 md:gap-20 items-center fade-in`}>
         <div className={`rounded-2xl overflow-hidden card-hover ${reverse ? 'md:order-last' : ''}`}>
@@ -186,21 +176,28 @@ export default function Home() {
             </div>
 
             {activeView === 'enterprise' ? (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <ServiceCard 
-                  icon={<Layers className="w-8 h-8"/>}
-                  title="Software a Medida"
-                  description="Aplicaciones a medida construidas desde cero para satisfacer las necesidades y objetivos de tu negocio."
+              <div className="space-y-20">
+                <IndividualServiceCard 
+                    imageUrl="https://placehold.co/600x500.png"
+                    imageAlt="Desarrollo de software a medida"
+                    hint="software development"
+                    title="Software a Medida"
+                    description="Aplicaciones a medida construidas desde cero para satisfacer las necesidades y objetivos de tu negocio."
                 />
-                <ServiceCard 
-                  icon={<Briefcase className="w-8 h-8"/>}
-                  title="Consultoría Tecnológica"
-                  description="Asesoramiento estratégico experto para alinear tu tecnología con tus objetivos empresariales para un impacto máximo."
+                <IndividualServiceCard 
+                    imageUrl="https://placehold.co/600x500.png"
+                    imageAlt="Consultoría tecnológica"
+                    hint="business meeting"
+                    title="Consultoría Tecnológica"
+                    description="Asesoramiento estratégico experto para alinear tu tecnología con tus objetivos empresariales para un impacto máximo."
+                    reverse={true}
                 />
-                <ServiceCard 
-                  icon={<Building className="w-8 h-8"/>}
-                  title="Modernización de Sistemas"
-                  description="Actualización de sistemas heredados para mejorar el rendimiento, la seguridad y la experiencia del usuario."
+                <IndividualServiceCard 
+                    imageUrl="https://placehold.co/600x500.png"
+                    imageAlt="Modernización de sistemas"
+                    hint="cloud infrastructure"
+                    title="Modernización de Sistemas"
+                    description="Actualización de sistemas heredados para mejorar el rendimiento, la seguridad y la experiencia del usuario."
                 />
               </div>
             ) : (
