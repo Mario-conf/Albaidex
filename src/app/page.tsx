@@ -9,7 +9,7 @@ import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Flame, BrainCircuit, FileCode, Hexagon, Triangle, Wind, Network } from "lucide-react";
+import { Flame, BrainCircuit, FileCode, Hexagon, Triangle, Wind, Network, Puzzle, TrendingUp, RefreshCw } from "lucide-react";
 
 // Custom Icons
 const ReactIcon = () => (
@@ -94,15 +94,18 @@ const Contact = () => (
 const enterpriseSolutions = [
   {
     title: "Software a Medida",
-    description: "Creamos soluciones de software personalizadas y escalables que se adaptan a las necesidades específicas de tu empresa."
+    description: "Creamos soluciones de software personalizadas y escalables que se adaptan a las necesidades específicas de tu empresa.",
+    icon: <Puzzle className="w-8 h-8 text-primary" />
   },
   {
     title: "Consultoría Tecnológica",
-    description: "Te ayudamos a alinear tu estrategia tecnológica con tus objetivos de negocio para un crecimiento sostenible."
+    description: "Te ayudamos a alinear tu estrategia tecnológica con tus objetivos de negocio para un crecimiento sostenible.",
+    icon: <TrendingUp className="w-8 h-8 text-primary" />
   },
   {
     title: "Modernización de Sistemas",
-    description: "Actualizamos tus sistemas heredados a arquitecturas modernas, mejorando la eficiencia y la seguridad."
+    description: "Actualizamos tus sistemas heredados a arquitecturas modernas, mejorando la eficiencia y la seguridad.",
+    icon: <RefreshCw className="w-8 h-8 text-primary" />
   }
 ];
 
@@ -174,8 +177,11 @@ export default function Home() {
             {activeView === 'enterprise' ? (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 fade-in">
                 {enterpriseSolutions.map((solution) => (
-                  <Card key={solution.title} className="card-hover flex flex-col">
+                  <Card key={solution.title} className="card-hover flex flex-col text-center items-center p-4">
                     <CardHeader>
+                      <div className="bg-muted rounded-full p-4 mb-4">
+                        {solution.icon}
+                      </div>
                       <CardTitle>{solution.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="flex-grow">
@@ -216,4 +222,6 @@ export default function Home() {
     </div>
   );
 }
+    
+
     
