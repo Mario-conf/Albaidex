@@ -9,20 +9,7 @@ import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Puzzle, TrendingUp, RefreshCw, Network, Wind, Flame, BrainCircuit, FileCode, Hexagon, Triangle } from "lucide-react";
-
-// Custom Icon for React
-const ReactIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-11.5 -10.23174 23 20.46348" className="h-full w-full" fill="currentColor">
-        <title>React</title>
-        <circle cx="0" cy="0" r="2.05" />
-        <g stroke="currentColor" strokeWidth="1" fill="none">
-            <ellipse rx="11" ry="4.2"/>
-            <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
-            <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
-        </g>
-    </svg>
-);
+import { Puzzle, TrendingUp, RefreshCw } from "lucide-react";
 
 // Data for dynamic sections
 const enterpriseSolutions = [
@@ -71,14 +58,14 @@ const appSolutions = [
 ];
 
 const technologies = [
-  { name: "Next.js", icon: <Network className="w-full h-full" /> },
-  { name: "React", icon: <ReactIcon /> },
-  { name: "Tailwind CSS", icon: <Wind className="w-full h-full" /> },
-  { name: "Firebase", icon: <Flame className="w-full h-full" /> },
-  { name: "Genkit", icon: <BrainCircuit className="w-full h-full" /> },
-  { name: "TypeScript", icon: <FileCode className="w-full h-full" /> },
-  { name: "Node.js", icon: <Hexagon className="w-full h-full" fill="currentColor" /> },
-  { name: "Vercel", icon: <Triangle className="w-full h-full" fill="currentColor" /> },
+  { name: "Next.js", image: "https://placehold.co/128x128.png", hint: "nextjs logo" },
+  { name: "React", image: "https://placehold.co/128x128.png", hint: "react logo" },
+  { name: "Tailwind CSS", image: "https://placehold.co/128x128.png", hint: "tailwind logo" },
+  { name: "Firebase", image: "https://placehold.co/128x128.png", hint: "firebase logo" },
+  { name: "Genkit", image: "https://placehold.co/128x128.png", hint: "genkit logo" },
+  { name: "TypeScript", image: "https://placehold.co/128x128.png", hint: "typescript logo" },
+  { name: "Node.js", image: "https://placehold.co/128x128.png", hint: "nodejs logo" },
+  { name: "Vercel", image: "https://placehold.co/128x128.png", hint: "vercel logo" },
 ];
 
 
@@ -112,7 +99,15 @@ const TechnologySlider = () => {
                     {extendedTechnologies.map((tech, index) => (
                         <div key={index} className="flex-shrink-0 w-64 px-4">
                             <div className="flex flex-col items-center justify-center p-6 bg-card rounded-2xl border border-border/50 h-48">
-                                <div className="h-16 w-16 mb-4 text-foreground/80">{tech.icon}</div>
+                                <div className="relative h-20 w-full mb-4">
+                                  <Image 
+                                      src={tech.image} 
+                                      alt={tech.name} 
+                                      layout="fill"
+                                      objectFit="contain"
+                                      data-ai-hint={tech.hint}
+                                  />
+                                </div>
                                 <p className="font-semibold text-foreground text-center">{tech.name}</p>
                             </div>
                         </div>
