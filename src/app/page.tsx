@@ -9,7 +9,7 @@ import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { ArrowRight, Building, Layers, Briefcase, Flame, BrainCircuit, FileCode, Hexagon, Triangle, Wind, Network } from "lucide-react";
+import { ArrowRight, Flame, BrainCircuit, FileCode, Hexagon, Triangle, Wind, Network } from "lucide-react";
 
 // Custom Icons
 const ReactIcon = () => (
@@ -51,30 +51,6 @@ const IndividualServiceCard = ({ imageUrl, imageAlt, hint, title, description, r
             </Button>
         </div>
     </div>
-);
-
-const CaseStudies = () => (
-  <section id="case-studies" className="py-20 md:py-32 bg-muted fade-in">
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16">
-        <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Casos de Éxito</h3>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Descubre cómo transformamos industrias con soluciones innovadoras.</p>
-      </div>
-      <div className="grid md:grid-cols-2 gap-10 items-center">
-        <div className="rounded-2xl overflow-hidden card-hover">
-          <Image src="https://placehold.co/600x500.png" alt="Caso de estudio de logística" width={600} height={500} className="w-full h-auto object-cover" data-ai-hint="logistics delivery truck" />
-        </div>
-        <div className="relative md:-ml-10 bg-card p-8 md:p-12 rounded-2xl shadow-xl z-10 border border-border/50">
-          <span className="text-primary font-bold tracking-widest uppercase">Logística</span>
-          <h4 className="text-3xl font-bold mt-2">Eficiencia Aumentada en 25%</h4>
-          <p className="mt-4 text-muted-foreground text-lg">Desarrollamos un sistema ERP a medida para un cliente logístico, optimizando flujos de trabajo y reduciendo costes.</p>
-          <Button asChild variant="link" className="p-0 mt-6 text-lg text-primary font-bold">
-            <Link href="#">Ver estudio de caso <ArrowRight className="ml-2" /></Link>
-          </Button>
-        </div>
-      </div>
-    </div>
-  </section>
 );
 
 const technologies = [
@@ -221,8 +197,6 @@ export default function Home() {
             )}
           </div>
         </section>
-        
-        {activeView === 'enterprise' && <CaseStudies />}
         
         <TechnologySlider />
         <Contact />

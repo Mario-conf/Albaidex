@@ -21,7 +21,6 @@ export const Footer = () => {
             <nav className="mt-4 space-y-2">
               <NavLink href="#soluciones">Enterprise</NavLink>
               <NavLink href="#soluciones">Apps</NavLink>
-              <NavLink href="#case-studies">Proyectos</NavLink>
             </nav>
           </div>
           <div className="col-span-1">
