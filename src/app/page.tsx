@@ -222,7 +222,7 @@ const Scope = () => (
       <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mt-12 fade-in max-w-4xl mx-auto">
         <Card className="card-hover flex flex-col text-center items-center p-6">
           <CardHeader>
-            <div className="bg-muted rounded-full w-24 h-24 flex items-center justify-center mb-4">
+            <div className="bg-muted rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-md">
               <Globe className="w-10 h-10 text-primary" />
             </div>
             <CardTitle>Clientes Internacionales</CardTitle>
@@ -233,7 +233,7 @@ const Scope = () => (
         </Card>
         <Card className="card-hover flex flex-col text-center items-center p-6">
           <CardHeader>
-            <div className="bg-muted rounded-full w-24 h-24 flex items-center justify-center mb-4">
+            <div className="bg-muted rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-md">
               <Wifi className="w-10 h-10 text-primary" />
             </div>
             <CardTitle>Trabajo 100% Remoto</CardTitle>
@@ -257,23 +257,27 @@ const Security = () => (
                 </p>
             </div>
             <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mt-12 fade-in max-w-4xl mx-auto">
-                <Card className="p-6">
-                    <CardHeader className="flex flex-row items-center gap-4 p-0">
+                <Card className="card-hover flex flex-col text-center items-center p-6">
+                    <CardHeader>
+                      <div className="bg-background rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-md">
                         <ShieldCheck className="w-10 h-10 text-primary" />
-                        <CardTitle>Responsabilidad del Usuario</CardTitle>
+                      </div>
+                      <CardTitle>Responsabilidad del Usuario</CardTitle>
                     </CardHeader>
-                    <CardContent className="pt-6 pl-0">
+                    <CardContent>
                         <p className="text-muted-foreground">
                           La seguridad de tu cuenta es un esfuerzo conjunto. Eres responsable de custodiar tus credenciales, y por nuestra parte, implementamos políticas como la rotación periódica de contraseñas y la restricción de claves recientes para fortalecer la protección de tus datos.
                         </p>
                     </CardContent>
                 </Card>
-                <Card className="p-6">
-                    <CardHeader className="flex flex-row items-center gap-4 p-0">
+                <Card className="card-hover flex flex-col text-center items-center p-6">
+                    <CardHeader>
+                      <div className="bg-background rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-md">
                         <DatabaseZap className="w-10 h-10 text-primary" />
-                        <CardTitle>Protección de Datos</CardTitle>
+                      </div>
+                      <CardTitle>Protección de Datos</CardTitle>
                     </CardHeader>
-                    <CardContent className="pt-6 pl-0">
+                    <CardContent>
                         <p className="text-muted-foreground">
                             Protegemos los datos con encriptación en bases de datos MySQL. Sin embargo, no nos hacemos responsables de accesos indebidos por negligencia del usuario en la custodia de sus credenciales.
                         </p>
@@ -337,7 +341,7 @@ export default function Home() {
                 {pageData.enterpriseSolutions.map((solution) => (
                   <Card key={solution.title} className="card-hover flex flex-col text-center items-center p-6">
                     <CardHeader>
-                      <div className="bg-muted rounded-full w-24 h-24 flex items-center justify-center mb-4">
+                      <div className="bg-muted rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-md">
                         {solution.icon}
                       </div>
                       <CardTitle>{solution.title}</CardTitle>
@@ -397,6 +401,8 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
 
