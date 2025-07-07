@@ -8,7 +8,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { 
   Puzzle, 
   TrendingUp, 
@@ -356,27 +356,34 @@ export default function Home() {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 fade-in">
                  {pageData.appSolutions.map((solution) => (
                   <Card key={solution.title} className="card-hover flex flex-col overflow-hidden">
-                    <Image 
-                        src={solution.image} 
-                        alt={solution.title} 
-                        width={600} 
-                        height={400} 
-                        className="w-full h-48 object-cover"
-                        data-ai-hint={solution.hint}
-                    />
+                    <Link href={`https://${solution.subdomain}`} target="_blank" rel="noopener noreferrer" className="block">
+                      <Image 
+                          src={solution.image} 
+                          alt={solution.title} 
+                          width={600} 
+                          height={400} 
+                          className="w-full h-48 object-cover"
+                          data-ai-hint={solution.hint}
+                      />
+                    </Link>
                     <CardHeader>
                       <CardTitle>{solution.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="flex-grow">
                       <p className="text-muted-foreground">{solution.description}</p>
                     </CardContent>
-                    <div className="p-6 pt-0">
+                    <CardFooter className="flex-col sm:flex-row gap-2">
                         <Button asChild className="w-full">
+                            <Link href={`https://${solution.subdomain}`} target="_blank" rel="noopener noreferrer">
+                                <Rocket className="mr-2 h-4 w-4" /> Acceder
+                            </Link>
+                        </Button>
+                        <Button asChild className="w-full" variant="secondary">
                             <Link href={solution.githubUrl} target="_blank" rel="noopener noreferrer">
                                 <Github className="mr-2 h-4 w-4" /> Ver Código
                             </Link>
                         </Button>
-                    </div>
+                    </CardFooter>
                   </Card>
                 ))}
               </div>
