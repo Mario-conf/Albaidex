@@ -9,19 +9,39 @@ import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Puzzle, TrendingUp, RefreshCw } from "lucide-react";
+import { 
+  Puzzle, 
+  TrendingUp, 
+  Bot,
+  Cog,
+  Sparkles,
+  Server,
+  Github,
+  ShieldCheck,
+  DatabaseZap,
+  Globe,
+  Wifi,
+  Zap
+} from "lucide-react";
 
 // All dynamic page content is centralized here for easy editing.
 const pageData = {
   hero: {
+    title: "Software inteligente, desarrollado con inteligencia.",
+    subtitle: "Creamos soluciones potentes y elegantes para empresas e individuos con visión de futuro.",
     image: "/img/img/bg.jpg",
     hint: "background"
   },
   enterpriseSolutions: [
     {
-      title: "Software a Medida",
-      description: "Creamos soluciones de software personalizadas y escalables que se adaptan a las necesidades específicas de tu empresa.",
+      title: "Desarrollo a Medida",
+      description: "Creamos software personalizado y escalable que se adapta a las necesidades específicas de tu empresa.",
       icon: <Puzzle className="w-8 h-8 text-primary" />
+    },
+    {
+      title: "Automatización de Procesos",
+      description: "Optimizamos tus flujos de trabajo con soluciones de automatización inteligentes para aumentar la eficiencia.",
+      icon: <Bot className="w-8 h-8 text-primary" />
     },
     {
       title: "Consultoría Tecnológica",
@@ -29,35 +49,53 @@ const pageData = {
       icon: <TrendingUp className="w-8 h-8 text-primary" />
     },
     {
-      title: "Modernización de Sistemas",
-      description: "Actualizamos tus sistemas heredados a arquitecturas modernas, mejorando la eficiencia y la seguridad.",
-      icon: <RefreshCw className="w-8 h-8 text-primary" />
+      title: "Adaptación de Sistemas",
+      description: "Personalizamos e integramos aplicaciones internas para que funcionen perfectamente en tu ecosistema.",
+      icon: <Cog className="w-8 h-8 text-primary" />
+    },
+    {
+      title: "IA Generativa",
+      description: "Implementamos soluciones con IA Generativa para potenciar la innovación y la capacidad de tu negocio.",
+      icon: <Sparkles className="w-8 h-8 text-primary" />
+    },
+    {
+      title: "Digitalización",
+      description: "Modernizamos tus sistemas y procesos para impulsar tu transformación digital de forma segura.",
+      icon: <Server className="w-8 h-8 text-primary" />
     }
   ],
   appSolutions: [
     {
-      title: "Transporte On-Demand",
-      description: "Conectamos usuarios y conductores de forma eficiente y fiable.",
+      title: "Finanzas67",
+      description: "Gestión financiera inteligente para pymes y autónomos.",
       image: "https://placehold.co/600x400.png",
-      hint: "city street"
+      hint: "finance dashboard",
+      subdomain: "finanzas67.albaidex.com",
+      githubUrl: "#"
     },
     {
-      title: "Estancias Únicas",
-      description: "Plataformas de alquiler vacacional con experiencias excepcionales.",
+      title: "Notasync",
+      description: "Toma de notas colaborativa con sincronización en tiempo real.",
       image: "https://placehold.co/600x400.png",
-      hint: "modern interior"
+      hint: "notes app interface",
+      subdomain: "notasync.albaidex.com",
+      githubUrl: "#"
     },
     {
-      title: "Entrega de Comida",
-      description: "Soluciones rápidas y eficientes para restaurantes y clientes.",
+      title: "PlaniAdmin",
+      description: "Planificación de proyectos y gestión de tareas para equipos.",
       image: "https://placehold.co/600x400.png",
-      hint: "food delivery"
+      hint: "project management board",
+      subdomain: "planiadmin.albaidex.com",
+      githubUrl: "#"
     },
     {
-      title: "Fitness Personal",
-      description: "Apps que motivan y guían a los usuarios hacia sus metas de salud.",
+      title: "GestorRecursos",
+      description: "Optimiza la asignación y el uso de recursos empresariales.",
       image: "https://placehold.co/600x400.png",
-      hint: "fitness workout"
+      hint: "resource allocation chart",
+      subdomain: "gestorrecursos.albaidex.com",
+      githubUrl: "#"
     }
   ],
   technologies: [
@@ -78,11 +116,16 @@ const Hero = () => (
   <section className="relative h-screen flex items-center justify-center text-center text-white bg-black">
     <Image src={pageData.hero.image} alt="Equipo de Albaidex colaborando en un proyecto" layout="fill" objectFit="cover" className="opacity-40" data-ai-hint={pageData.hero.hint}/>
     <div className="relative z-10 p-4 fade-in">
-        <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight text-white">Software que te impulsa.</h1>
-        <p className="mt-6 max-w-2xl mx-auto text-xl md:text-2xl text-gray-200">Creamos soluciones potentes y elegantes para empresas e individuos con visión de futuro.</p>
-        <Button asChild size="lg" className="mt-10 h-auto bg-primary text-primary-foreground font-bold py-4 px-10 rounded-full hover:bg-primary/90 transition-all duration-300 text-lg shadow-lg">
-            <Link href="#contact">Comienza tu Proyecto</Link>
-        </Button>
+        <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight text-white">{pageData.hero.title}</h1>
+        <p className="mt-6 max-w-3xl mx-auto text-xl md:text-2xl text-gray-200">{pageData.hero.subtitle}</p>
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button asChild size="lg" className="h-auto bg-primary text-primary-foreground font-bold py-4 px-10 rounded-full hover:bg-primary/90 transition-all duration-300 text-lg shadow-lg">
+                <Link href="#soluciones">Soluciones para Empresas</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="h-auto bg-transparent border-white text-white font-bold py-4 px-10 rounded-full hover:bg-white hover:text-black transition-all duration-300 text-lg shadow-lg">
+                <Link href="#soluciones">Explorar Aplicaciones</Link>
+            </Button>
+        </div>
     </div>
   </section>
 );
@@ -121,8 +164,132 @@ const TechnologySlider = () => {
     );
 };
 
+const Philosophy = () => (
+  <section id="filosofia" className="py-20 md:py-32 bg-muted">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-16 fade-in">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Transparencia y Filosofía</h2>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+          Nuestros principios fundamentales guían todo lo que construimos.
+        </p>
+      </div>
+      <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mt-12 fade-in">
+        <Card className="card-hover flex flex-col text-center items-center p-6">
+          <CardHeader>
+            <div className="bg-background rounded-full p-4 mb-4">
+              <Github className="w-10 h-10 text-primary" />
+            </div>
+            <CardTitle>Open Code</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground">La mayoría de nuestras apps son de código accesible, promoviendo la transparencia y la colaboración comunitaria bajo licencias claras.</p>
+          </CardContent>
+        </Card>
+        <Card className="card-hover flex flex-col text-center items-center p-6">
+          <CardHeader>
+            <div className="bg-background rounded-full p-4 mb-4">
+              <Sparkles className="w-10 h-10 text-primary" />
+            </div>
+            <CardTitle>IA Esencial</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground">Apostamos por la Inteligencia Artificial como una herramienta indispensable en nuestros procesos de desarrollo para crear soluciones más inteligentes.</p>
+          </CardContent>
+        </Card>
+        <Card className="card-hover flex flex-col text-center items-center p-6">
+          <CardHeader>
+            <div className="bg-background rounded-full p-4 mb-4">
+              <Zap className="w-10 h-10 text-primary" />
+            </div>
+            <CardTitle>Eficiencia Radical</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground">Priorizamos la eficiencia y la automatización sobre el romanticismo del trabajo manual. Entregamos resultados, no horas.</p>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  </section>
+);
+
+const Scope = () => (
+  <section id="alcance" className="py-20 md:py-32 bg-background">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-16 fade-in">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Alcance Global</h2>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+          Sin fronteras, sin oficinas. Creamos software para el mundo.
+        </p>
+      </div>
+      <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mt-12 fade-in max-w-4xl mx-auto">
+        <Card className="card-hover flex flex-col text-center items-center p-6">
+          <CardHeader>
+            <div className="bg-muted rounded-full p-4 mb-4">
+              <Globe className="w-10 h-10 text-primary" />
+            </div>
+            <CardTitle>Clientes Internacionales</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground">Nuestro alcance es global, colaboramos con clientes y empresas de cualquier país para llevar sus ideas al siguiente nivel.</p>
+          </CardContent>
+        </Card>
+        <Card className="card-hover flex flex-col text-center items-center p-6">
+          <CardHeader>
+            <div className="bg-muted rounded-full p-4 mb-4">
+              <Wifi className="w-10 h-10 text-primary" />
+            </div>
+            <CardTitle>Trabajo 100% Remoto</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground">Operamos de forma completamente remota, lo que nos permite ser más ágiles, eficientes y atraer al mejor talento sin importar la ubicación.</p>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  </section>
+);
+
+const Security = () => (
+    <section id="seguridad" className="py-20 md:py-32 bg-muted">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16 fade-in">
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Seguridad y Responsabilidad</h2>
+                <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+                    Tu seguridad es nuestra prioridad. Estas son nuestras políticas.
+                </p>
+            </div>
+            <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mt-12 fade-in max-w-4xl mx-auto">
+                <Card className="p-6">
+                    <CardHeader className="flex flex-row items-center gap-4 p-0">
+                        <ShieldCheck className="w-10 h-10 text-primary" />
+                        <CardTitle>Responsabilidad del Usuario</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-6 pl-0">
+                        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                            <li>El usuario es responsable de la seguridad de sus credenciales.</li>
+                            <li>Las contraseñas deben cambiarse cada 3 meses.</li>
+                            <li>No se puede repetir una contraseña en los últimos 3 ciclos.</li>
+                        </ul>
+                    </CardContent>
+                </Card>
+                <Card className="p-6">
+                    <CardHeader className="flex flex-row items-center gap-4 p-0">
+                        <DatabaseZap className="w-10 h-10 text-primary" />
+                        <CardTitle>Protección de Datos</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-6 pl-0">
+                        <p className="text-muted-foreground">
+                            Protegemos los datos con encriptación en bases de datos MySQL. Sin embargo, no nos hacemos responsables de accesos indebidos por negligencia del usuario en la custodia de sus credenciales.
+                        </p>
+                    </CardContent>
+                </Card>
+            </div>
+        </div>
+    </section>
+);
+
 const Contact = () => (
-    <section id="contact" className="bg-muted">
+    <section id="contact" className="bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
             <div className="max-w-3xl mx-auto text-center fade-in">
                 <h3 className="text-4xl md:text-5xl font-bold tracking-tight">¿Listo para construir algo increíble?</h3>
@@ -176,7 +343,7 @@ export default function Home() {
             {activeView === 'enterprise' ? (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 fade-in">
                 {pageData.enterpriseSolutions.map((solution) => (
-                  <Card key={solution.title} className="card-hover flex flex-col text-center items-center p-4">
+                  <Card key={solution.title} className="card-hover flex flex-col text-center items-center p-6">
                     <CardHeader>
                       <div className="bg-muted rounded-full p-4 mb-4">
                         {solution.icon}
@@ -207,6 +374,13 @@ export default function Home() {
                     <CardContent className="flex-grow">
                       <p className="text-muted-foreground">{solution.description}</p>
                     </CardContent>
+                    <div className="p-6 pt-0">
+                        <Button asChild className="w-full">
+                            <Link href={solution.githubUrl} target="_blank" rel="noopener noreferrer">
+                                <Github className="mr-2 h-4 w-4" /> Ver Código
+                            </Link>
+                        </Button>
+                    </div>
                   </Card>
                 ))}
               </div>
@@ -214,6 +388,9 @@ export default function Home() {
           </div>
         </section>
         
+        <Philosophy />
+        <Scope />
+        <Security />
         <TechnologySlider />
         <Contact />
       </main>
@@ -221,5 +398,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

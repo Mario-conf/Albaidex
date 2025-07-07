@@ -10,11 +10,12 @@ export const Footer = () => {
             <Link href="#" className="text-2xl font-bold text-foreground">Albaidex</Link>
             <p className="text-sm text-muted-foreground mt-1">© {new Date().getFullYear()} Albaidex. Todos los derechos reservados.</p>
           </div>
-          <nav className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-2 text-muted-foreground">
-            <Link href="#soluciones" className="text-sm hover:text-primary transition-colors">Soluciones</Link>
-            <Link href="#contact" className="text-sm hover:text-primary transition-colors">Contacto</Link>
+          <nav className="flex flex-wrap items-center justify-center md:justify-end gap-x-4 sm:gap-x-6 gap-y-2 text-muted-foreground">
             <Link href="#" className="text-sm hover:text-primary transition-colors">Privacidad</Link>
-            <Link href="#" className="text-sm hover:text-primary transition-colors">Términos</Link>
+            <Link href="#" className="text-sm hover:text-primary transition-colors">Cookies</Link>
+            <Link href="#" className="text-sm hover:text-primary transition-colors">Aviso Legal</Link>
+            <Link href="#" className="text-sm hover:text-primary transition-colors">Licencia</Link>
+            <Link href="#" className="text-sm hover:text-primary transition-colors">Seguridad</Link>
           </nav>
         </div>
       </div>
