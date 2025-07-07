@@ -21,7 +21,8 @@ import {
   DatabaseZap,
   Globe,
   Wifi,
-  Zap
+  Zap,
+  Rocket
 } from "lucide-react";
 
 // All dynamic page content is centralized here for easy editing.
@@ -265,11 +266,9 @@ const Security = () => (
                         <CardTitle>Responsabilidad del Usuario</CardTitle>
                     </CardHeader>
                     <CardContent className="pt-6 pl-0">
-                        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                            <li>El usuario es responsable de la seguridad de sus credenciales.</li>
-                            <li>Las contraseñas deben cambiarse cada 3 meses.</li>
-                            <li>No se puede repetir una contraseña en los últimos 3 ciclos.</li>
-                        </ul>
+                        <p className="text-muted-foreground">
+                          La seguridad de tu cuenta es un esfuerzo conjunto. Eres responsable de custodiar tus credenciales, y por nuestra parte, implementamos políticas como la rotación periódica de contraseñas y la restricción de claves recientes para fortalecer la protección de tus datos.
+                        </p>
                     </CardContent>
                 </Card>
                 <Card className="p-6">
