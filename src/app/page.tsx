@@ -249,7 +249,7 @@ const Security = () => (
             <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mt-12 fade-in max-w-4xl mx-auto">
                 <Card className="card-hover flex flex-col">
                   <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-                    <div className="bg-background rounded-2xl w-full p-6 mb-6 flex justify-center">
+                    <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center">
                       <ShieldCheck className="w-10 h-10 text-primary" />
                     </div>
                     <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Responsabilidad del Usuario</h3>
@@ -260,7 +260,7 @@ const Security = () => (
                 </Card>
                 <Card className="card-hover flex flex-col">
                   <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-                    <div className="bg-background rounded-2xl w-full p-6 mb-6 flex justify-center">
+                    <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center">
                       <DatabaseZap className="w-10 h-10 text-primary" />
                     </div>
                     <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Protección de Datos</h3>
