@@ -91,7 +91,7 @@ const TechnologySlider = () => {
     const extendedTechnologies = [...pageData.technologies, ...pageData.technologies];
 
     return (
-        <section className="py-20 md:py-32 bg-background overflow-hidden">
+        <section id="tecnologia" className="py-20 md:py-32 bg-background overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16 fade-in">
                     <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Nuestro Ecosistema Tecnológico</h3>
