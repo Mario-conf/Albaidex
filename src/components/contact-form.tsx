@@ -13,10 +13,10 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Loader2 } from 'lucide-react';
 
 const formSchema = z.object({
-  name: z.string().min(2, "Name is required."),
-  email: z.string().email("Please enter a valid email address."),
+  name: z.string().min(2, "El nombre es obligatorio."),
+  email: z.string().email("Por favor, introduce una dirección de correo válida."),
   company: z.string().optional(),
-  message: z.string().min(10, "Message must be at least 10 characters long."),
+  message: z.string().min(10, "El mensaje debe tener al menos 10 caracteres."),
 });
 
 export function ContactForm() {
@@ -40,16 +40,16 @@ export function ContactForm() {
       if (result.error) {
         toast({ variant: 'destructive', title: 'Error', description: result.error });
       } else {
-        toast({ title: 'Success!', description: result.success });
+        toast({ title: '¡Éxito!', description: result.success });
         form.reset();
       }
     } catch (error) {
-      toast({ variant: 'destructive', title: 'Error', description: 'An unexpected error occurred.' });
+      toast({ variant: 'destructive', title: 'Error', description: 'Ha ocurrido un error inesperado.' });
     }
   }
 
   return (
-    <Card className="w-full">
+    <Card className="w-full bg-card">
       <CardContent className="p-6">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -58,7 +58,7 @@ export function ContactForm() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Your Name</FormLabel>
+                  <FormLabel>Tu Nombre</FormLabel>
                   <FormControl>
                     <Input placeholder="John Doe" {...field} />
                   </FormControl>
@@ -71,7 +71,7 @@ export function ContactForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email Address</FormLabel>
+                  <FormLabel>Correo Electrónico</FormLabel>
                   <FormControl>
                     <Input placeholder="john@example.com" {...field} />
                   </FormControl>
@@ -84,9 +84,9 @@ export function ContactForm() {
               name="company"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Company (Optional)</FormLabel>
+                  <FormLabel>Empresa (Opcional)</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your Company Inc." {...field} />
+                    <Input placeholder="Tu Empresa S.L." {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -97,9 +97,9 @@ export function ContactForm() {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Message</FormLabel>
+                  <FormLabel>Mensaje</FormLabel>
                   <FormControl>
-                    <Textarea placeholder="Tell us about your project..." className="min-h-[100px]" {...field} />
+                    <Textarea placeholder="Cuéntanos sobre tu proyecto..." className="min-h-[100px]" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -107,7 +107,7 @@ export function ContactForm() {
             />
             <Button type="submit" disabled={isSubmitting} className="w-full">
               {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-              {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
+              {isSubmitting ? 'Enviando...' : 'Enviar Consulta'}
             </Button>
           </form>
         </Form>

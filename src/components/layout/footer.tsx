@@ -3,10 +3,10 @@ import { Github, Twitter, Linkedin } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-background border-t">
+    <footer className="bg-background border-t border-border/40">
       <div className="container mx-auto py-8 flex flex-col md:flex-row items-center justify-between">
         <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-          © {new Date().getFullYear()} SynergTech Innovations. All rights reserved.
+          © {new Date().getFullYear()} Albaidex. Todos los derechos reservados.
         </p>
         <div className="flex items-center space-x-4">
           <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">

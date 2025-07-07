@@ -14,9 +14,9 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Loader2, Lightbulb } from 'lucide-react';
 
 const formSchema = z.object({
-  appName: z.string().min(2, "App name must be at least 2 characters."),
-  appDescription: z.string().min(10, "Description must be at least 10 characters."),
-  appCategory: z.string().min(2, "Category is required."),
+  appName: z.string().min(2, "El nombre de la app debe tener al menos 2 caracteres."),
+  appDescription: z.string().min(10, "La descripción debe tener al menos 10 caracteres."),
+  appCategory: z.string().min(2, "La categoría es obligatoria."),
 });
 
 export function TaglineGenerator() {
@@ -42,10 +42,10 @@ export function TaglineGenerator() {
       if (result && result.taglines) {
         setTaglines(result.taglines);
       } else {
-        setError('The AI returned an unexpected response. Please try again.');
+        setError('La IA devolvió una respuesta inesperada. Por favor, inténtalo de nuevo.');
       }
     } catch (err) {
-      setError('Failed to generate taglines. Please check your connection and try again.');
+      setError('No se pudieron generar los lemas. Por favor, comprueba tu conexión e inténtalo de nuevo.');
       console.error(err);
     } finally {
       setIsLoading(false);
@@ -54,7 +54,7 @@ export function TaglineGenerator() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <Card>
+      <Card className="bg-card">
         <CardContent className="p-6 md:p-8">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -64,7 +64,7 @@ export function TaglineGenerator() {
                   name="appName"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>App Name</FormLabel>
+                      <FormLabel>Nombre de la App</FormLabel>
                       <FormControl>
                         <Input placeholder="e.g., SavvySaver" {...field} />
                       </FormControl>
@@ -77,9 +77,9 @@ export function TaglineGenerator() {
                   name="appCategory"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>App Category</FormLabel>
+                      <FormLabel>Categoría de la App</FormLabel>
                       <FormControl>
-                        <Input placeholder="e.g., Personal Finance" {...field} />
+                        <Input placeholder="e.g., Finanzas Personales" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -91,9 +91,9 @@ export function TaglineGenerator() {
                 name="appDescription"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>App Description</FormLabel>
+                    <FormLabel>Descripción de la App</FormLabel>
                     <FormControl>
-                      <Textarea placeholder="Describe what your app does in a few words." {...field} />
+                      <Textarea placeholder="Describe lo que hace tu app en pocas palabras." {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -101,7 +101,7 @@ export function TaglineGenerator() {
               />
               <Button type="submit" disabled={isLoading} className="w-full md:w-auto">
                 {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                {isLoading ? 'Generating...' : 'Generate Taglines'}
+                {isLoading ? 'Generando...' : 'Generar Lemas'}
               </Button>
             </form>
           </Form>
@@ -115,7 +115,7 @@ export function TaglineGenerator() {
 
           {taglines.length > 0 && (
             <div className="mt-8">
-              <h3 className="text-2xl font-semibold mb-4 text-center">Here are your taglines:</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-center">Aquí tienes tus lemas:</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {taglines.map((tagline, index) => (
                   <Card key={index} className="bg-secondary/50">

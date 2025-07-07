@@ -10,12 +10,12 @@ import { ArrowRight, Code2, PenTool, CloudCog, Wrench, PiggyBank, FolderKanban, 
 
 const Hero = () => (
   <section id="home" className="container mx-auto text-center py-20 md:py-32">
-    <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight mb-4">Crafting Digital Solutions, Powering Your Vision.</h1>
+    <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight mb-4">Innovación Digital desde el Corazón de Granada</h1>
     <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-      SynergTech Innovations is your partner in building powerful, user-centric applications. From bespoke business solutions to free apps that enrich daily life, we bring ideas to life with technology.
+      En Albaidex, fusionamos tecnología de vanguardia y visión estratégica para crear soluciones digitales que impulsan tu negocio.
     </p>
     <Button size="lg" asChild>
-      <Link href="#contact">Get a Quote</Link>
+      <Link href="#contact">Solicita un Presupuesto</Link>
     </Button>
   </section>
 );
@@ -23,23 +23,23 @@ const Hero = () => (
 const services = [
   {
     icon: <Code2 className="h-10 w-10 text-primary" />,
-    title: "Custom App Development",
-    description: "We build tailor-made mobile and web applications that solve your specific business challenges and drive growth.",
+    title: "Desarrollo a Medida",
+    description: "Construimos aplicaciones web y móviles personalizadas que resuelven tus desafíos de negocio y potencian el crecimiento.",
   },
   {
     icon: <PenTool className="h-10 w-10 text-primary" />,
-    title: "UI/UX Design",
-    description: "Our design team creates intuitive and beautiful interfaces that provide an exceptional user experience.",
+    title: "Diseño UI/UX",
+    description: "Nuestro equipo de diseño crea interfaces intuitivas y atractivas que garantizan una experiencia de usuario excepcional.",
   },
   {
     icon: <CloudCog className="h-10 w-10 text-primary" />,
-    title: "Cloud Integration",
-    description: "Leverage the power of the cloud with our seamless integration services for scalability and efficiency.",
+    title: "Integración Cloud",
+    description: "Aprovecha el poder de la nube con nuestros servicios de integración para una escalabilidad y eficiencia sin precedentes.",
   },
   {
     icon: <Wrench className="h-10 w-10 text-primary" />,
-    title: "Maintenance & Support",
-    description: "We provide ongoing support and maintenance to ensure your applications run smoothly and securely.",
+    title: "Mantenimiento y Soporte",
+    description: "Ofrecemos soporte y mantenimiento continuo para asegurar que tus aplicaciones funcionen de forma segura y eficiente.",
   },
 ];
 
@@ -47,8 +47,8 @@ const Services = () => (
   <section id="services" className="bg-card py-20 md:py-24">
     <div className="container mx-auto">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold font-headline">Our Services for Businesses</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">Full-cycle development services to bring your project from idea to launch.</p>
+        <h2 className="text-3xl md:text-4xl font-bold font-headline">Nuestros Servicios para Empresas</h2>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">Servicios de desarrollo de ciclo completo para llevar tu proyecto de la idea al lanzamiento.</p>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {services.map((service, index) => (
@@ -67,17 +67,17 @@ const freeApps = [
   {
     icon: <PiggyBank className="h-8 w-8 text-primary" />,
     title: "SavvySaver",
-    description: "An intuitive app to track your expenses and save money effortlessly.",
+    description: "Una app intuitiva para seguir tus gastos y ahorrar dinero sin esfuerzo.",
   },
   {
     icon: <FolderKanban className="h-8 w-8 text-primary" />,
     title: "Org-nize",
-    description: "Organize your tasks, notes, and projects in one simple, powerful tool.",
+    description: "Organiza tus tareas, notas y proyectos en una herramienta simple y potente.",
   },
   {
     icon: <HeartPulse className="h-8 w-8 text-primary" />,
     title: "HealthHub",
-    description: "Your personal health companion for tracking fitness goals and wellness.",
+    description: "Tu compañero de salud personal para seguir tus metas de fitness y bienestar.",
   },
 ];
 
@@ -85,12 +85,12 @@ const FreeApps = () => (
   <section id="free-apps" className="py-20 md:py-24">
     <div className="container mx-auto">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold font-headline">Free Apps for Everyone</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">We believe in the power of technology to improve lives, one app at a time.</p>
+        <h2 className="text-3xl md:text-4xl font-bold font-headline">Apps Gratuitas para Todos</h2>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">Creemos en el poder de la tecnología para mejorar vidas, una app a la vez.</p>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {freeApps.map((app, index) => (
-          <Card key={index} className="flex flex-col overflow-hidden transition-shadow hover:shadow-lg">
+          <Card key={index} className="flex flex-col overflow-hidden transition-shadow hover:shadow-lg bg-card">
             <CardHeader className="flex flex-row items-center gap-4 pb-4">
               {app.icon}
               <CardTitle className="text-2xl">{app.title}</CardTitle>
@@ -100,7 +100,7 @@ const FreeApps = () => (
             </CardContent>
             <CardFooter>
               <Button variant="outline" className="w-full">
-                Download Now
+                Descargar Ahora
               </Button>
             </CardFooter>
           </Card>
@@ -113,21 +113,21 @@ const FreeApps = () => (
 const blogPosts = [
   {
     image: "https://placehold.co/600x400.png",
-    hint: "technology abstract",
-    title: "The Future of Mobile App Development Trends",
-    excerpt: "Explore the upcoming trends in mobile app development that are set to revolutionize the industry in the coming years.",
+    hint: "granada alhambra",
+    title: "Impulsando la Innovación: El Ecosistema Tecnológico de Granada",
+    excerpt: "Descubre cómo Granada se está convirtiendo en un hub tecnológico clave en el sur de Europa.",
   },
   {
     image: "https://placehold.co/600x400.png",
     hint: "user experience",
-    title: "Why UI/UX is the Key to Your App's Success",
-    excerpt: "A deep dive into why a user-centric design approach is not just a feature, but a necessity for app success.",
+    title: "Diseño Centrado en el Usuario: La Clave del Éxito Digital",
+    excerpt: "Un análisis profundo de por qué un enfoque de diseño centrado en el usuario es una necesidad para el éxito de cualquier app.",
   },
   {
     image: "https://placehold.co/600x400.png",
     hint: "cloud computing",
-    title: "Scaling Your Business with Cloud-Native Apps",
-    excerpt: "Understand how cloud-native applications can provide the scalability and flexibility your business needs to grow.",
+    title: "Escalabilidad sin Límites con Aplicaciones en la Nube",
+    excerpt: "Entiende cómo las aplicaciones nativas en la nube pueden proporcionar la flexibilidad que tu negocio necesita para crecer.",
   },
 ];
 
@@ -135,12 +135,12 @@ const Blog = () => (
   <section id="blog" className="bg-card py-20 md:py-24">
     <div className="container mx-auto">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold font-headline">From Our Blog</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">Insights, news, and updates from the SynergTech team.</p>
+        <h2 className="text-3xl md:text-4xl font-bold font-headline">Desde Nuestro Blog</h2>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">Ideas, noticias y actualizaciones del equipo de Albaidex.</p>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogPosts.map((post, index) => (
-          <Card key={index} className="flex flex-col overflow-hidden transition-shadow hover:shadow-lg">
+          <Card key={index} className="flex flex-col overflow-hidden transition-shadow hover:shadow-lg bg-card">
             <CardHeader className="p-0">
               <Image src={post.image} alt={post.title} width={600} height={400} className="w-full h-48 object-cover" data-ai-hint={post.hint} />
             </CardHeader>
@@ -150,7 +150,7 @@ const Blog = () => (
             </CardContent>
             <CardFooter className="p-6 pt-0">
               <Button variant="link" className="p-0 h-auto" asChild>
-                <Link href="#">Read More <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                <Link href="#">Leer Más <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
             </CardFooter>
           </Card>
@@ -166,10 +166,10 @@ const TaglineSection = () => (
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold font-headline flex items-center justify-center gap-3">
           <Sparkles className="h-8 w-8 text-primary" />
-          AI-Powered Tagline Generator
+          Generador de Lemas con IA
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">
-          Stuck on a tagline? Describe your app and let our AI generate catchy options for you.
+          ¿Atascado sin un lema? Describe tu app y deja que nuestra IA genere opciones pegadizas para ti.
         </p>
       </div>
       <TaglineGenerator />
@@ -182,9 +182,9 @@ const ContactSection = () => (
   <section id="contact" className="bg-card py-20 md:py-24">
     <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
       <div className="text-center lg:text-left">
-        <h2 className="text-3xl md:text-4xl font-bold font-headline">Let's Build Together</h2>
+        <h2 className="text-3xl md:text-4xl font-bold font-headline">Construyamos Juntos</h2>
         <p className="text-lg text-muted-foreground mt-4">
-          Have a project in mind? We'd love to hear about it. Fill out the form and we'll get back to you to discuss how we can turn your idea into reality.
+          ¿Tienes un proyecto en mente? Nos encantaría escucharlo. Rellena el formulario y nos pondremos en contacto contigo.
         </p>
       </div>
       <ContactForm />

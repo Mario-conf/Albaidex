@@ -3,10 +3,10 @@
 import { z } from 'zod';
 
 const contactSchema = z.object({
-  name: z.string().min(2, "Name is required."),
-  email: z.string().email("Please enter a valid email address."),
+  name: z.string().min(2, "El nombre es obligatorio."),
+  email: z.string().email("Por favor, introduce una dirección de correo válida."),
   company: z.string().optional(),
-  message: z.string().min(10, "Message must be at least 10 characters long."),
+  message: z.string().min(10, "El mensaje debe tener al menos 10 caracteres."),
 });
 
 export async function submitInquiry(values: unknown) {
@@ -14,11 +14,11 @@ export async function submitInquiry(values: unknown) {
 
   if (!parsed.success) {
     const errorMessages = parsed.error.errors.map(e => e.message).join(', ');
-    return { error: `Invalid data: ${errorMessages}` };
+    return { error: `Datos inválidos: ${errorMessages}` };
   }
   
-  // In a real application, you would integrate with an email service or CRM here.
-  console.log('New inquiry received:', parsed.data);
+  // En una aplicación real, aquí se integraría con un servicio de correo o CRM.
+  console.log('Nueva consulta recibida:', parsed.data);
 
-  return { success: 'Your inquiry has been submitted successfully! We will get back to you soon.' };
+  return { success: '¡Tu consulta ha sido enviada con éxito! Nos pondremos en contacto contigo pronto.' };
 }
