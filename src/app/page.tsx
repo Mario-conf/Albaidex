@@ -9,7 +9,8 @@ import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { ArrowRight, Flame, BrainCircuit, FileCode, Hexagon, Triangle, Wind, Network } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Flame, BrainCircuit, FileCode, Hexagon, Triangle, Wind, Network } from "lucide-react";
 
 // Custom Icons
 const ReactIcon = () => (
@@ -36,21 +37,6 @@ const Hero = () => (
         </Button>
     </div>
   </section>
-);
-
-const IndividualServiceCard = ({ imageUrl, imageAlt, hint, title, description, reverse = false }: { imageUrl: string, imageAlt: string, hint: string, title: string, description: string, reverse?: boolean }) => (
-    <div className={`grid md:grid-cols-2 gap-10 md:gap-20 items-center fade-in`}>
-        <div className={`rounded-2xl overflow-hidden card-hover ${reverse ? 'md:order-last' : ''}`}>
-            <Image src={imageUrl} alt={imageAlt} width={600} height={500} className="w-full h-auto object-cover" data-ai-hint={hint} />
-        </div>
-        <div className="text-left">
-            <h4 className="text-3xl font-bold">{title}</h4>
-            <p className="mt-4 text-muted-foreground text-lg">{description}</p>
-            <Button asChild variant="link" className="p-0 mt-4 text-lg text-primary font-bold">
-              <Link href="#">Saber más <ArrowRight className="ml-2" /></Link>
-            </Button>
-        </div>
-    </div>
 );
 
 const technologies = [
@@ -113,6 +99,32 @@ const Contact = () => (
     </section>
 );
 
+const enterpriseSolutions = [
+  {
+    title: "Software a Medida",
+    description: "Creamos soluciones de software personalizadas y escalables que se adaptan a las necesidades específicas de tu empresa."
+  },
+  {
+    title: "Consultoría Tecnológica",
+    description: "Te ayudamos a alinear tu estrategia tecnológica con tus objetivos de negocio para un crecimiento sostenible."
+  },
+  {
+    title: "Modernización de Sistemas",
+    description: "Actualizamos tus sistemas heredados a arquitecturas modernas, mejorando la eficiencia y la seguridad."
+  }
+];
+
+const appSolutions = [
+  {
+    title: "Transporte On-Demand",
+    description: "Desarrollamos aplicaciones de transporte intuitivas y fiables para conectar a usuarios y conductores de forma eficiente."
+  },
+  {
+    title: "Estancias Únicas",
+    description: "Construimos plataformas de alquiler vacacional con experiencias de usuario excepcionales y gestión simplificada."
+  }
+];
+
 export default function Home() {
   const [activeView, setActiveView] = useState<'enterprise' | 'apps'>('enterprise');
 
@@ -152,47 +164,30 @@ export default function Home() {
             </div>
 
             {activeView === 'enterprise' ? (
-              <div className="space-y-20">
-                <IndividualServiceCard 
-                    imageUrl="https://placehold.co/600x500.png"
-                    imageAlt="Desarrollo de software a medida"
-                    hint="software development"
-                    title="Software a Medida"
-                    description="Aplicaciones a medida construidas desde cero para satisfacer las necesidades y objetivos de tu negocio."
-                />
-                <IndividualServiceCard 
-                    imageUrl="https://placehold.co/600x500.png"
-                    imageAlt="Consultoría tecnológica"
-                    hint="business meeting"
-                    title="Consultoría Tecnológica"
-                    description="Asesoramiento estratégico experto para alinear tu tecnología con tus objetivos empresariales para un impacto máximo."
-                    reverse={true}
-                />
-                <IndividualServiceCard 
-                    imageUrl="https://placehold.co/600x500.png"
-                    imageAlt="Modernización de sistemas"
-                    hint="cloud infrastructure"
-                    title="Modernización de Sistemas"
-                    description="Actualización de sistemas heredados para mejorar el rendimiento, la seguridad y la experiencia del usuario."
-                />
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 fade-in">
+                {enterpriseSolutions.map((solution) => (
+                  <Card key={solution.title} className="card-hover flex flex-col">
+                    <CardHeader>
+                      <CardTitle>{solution.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <p className="text-muted-foreground">{solution.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             ) : (
-              <div className="space-y-20">
-                <IndividualServiceCard 
-                    imageUrl="https://placehold.co/600x500.png"
-                    imageAlt="App de transporte"
-                    hint="mobile app interface"
-                    title="Transporte On-Demand"
-                    description="Llega a donde necesites con plataformas de viaje compartido fiables y sin interrupciones, inspiradas en los mejores."
-                />
-                <IndividualServiceCard 
-                    imageUrl="https://placehold.co/600x500.png"
-                    imageAlt="Plataforma de alquileres"
-                    hint="map navigation city"
-                    title="Estancias Únicas"
-                    description="Descubre y reserva alojamientos únicos con plataformas de alquiler ricas en funcionalidades."
-                    reverse={true}
-                />
+              <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mt-12 fade-in">
+                 {appSolutions.map((solution) => (
+                  <Card key={solution.title} className="card-hover flex flex-col">
+                    <CardHeader>
+                      <CardTitle>{solution.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <p className="text-muted-foreground">{solution.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             )}
           </div>
@@ -205,3 +200,4 @@ export default function Home() {
     </div>
   );
 }
+    
