@@ -11,68 +11,72 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Puzzle, TrendingUp, RefreshCw } from "lucide-react";
 
-// Data for dynamic sections
-const enterpriseSolutions = [
-  {
-    title: "Software a Medida",
-    description: "Creamos soluciones de software personalizadas y escalables que se adaptan a las necesidades específicas de tu empresa.",
-    icon: <Puzzle className="w-8 h-8 text-primary" />
+// All dynamic page content is centralized here for easy editing.
+const pageData = {
+  hero: {
+    image: "https://placehold.co/1920x1080.png",
+    hint: "modern office collaboration"
   },
-  {
-    title: "Consultoría Tecnológica",
-    description: "Te ayudamos a alinear tu estrategia tecnológica con tus objetivos de negocio para un crecimiento sostenible.",
-    icon: <TrendingUp className="w-8 h-8 text-primary" />
-  },
-  {
-    title: "Modernización de Sistemas",
-    description: "Actualizamos tus sistemas heredados a arquitecturas modernas, mejorando la eficiencia y la seguridad.",
-    icon: <RefreshCw className="w-8 h-8 text-primary" />
-  }
-];
-
-const appSolutions = [
-  {
-    title: "Transporte On-Demand",
-    description: "Conectamos usuarios y conductores de forma eficiente y fiable.",
-    image: "https://placehold.co/600x400.png",
-    hint: "city street"
-  },
-  {
-    title: "Estancias Únicas",
-    description: "Plataformas de alquiler vacacional con experiencias excepcionales.",
-    image: "https://placehold.co/600x400.png",
-    hint: "modern interior"
-  },
-  {
-    title: "Entrega de Comida",
-    description: "Soluciones rápidas y eficientes para restaurantes y clientes.",
-    image: "https://placehold.co/600x400.png",
-    hint: "food delivery"
-  },
-  {
-    title: "Fitness Personal",
-    description: "Apps que motivan y guían a los usuarios hacia sus metas de salud.",
-    image: "https://placehold.co/600x400.png",
-    hint: "fitness workout"
-  }
-];
-
-const technologies = [
-  { name: "Next.js", image: "https://placehold.co/128x128.png", hint: "nextjs logo" },
-  { name: "React", image: "https://placehold.co/128x128.png", hint: "react logo" },
-  { name: "Tailwind CSS", image: "https://placehold.co/128x128.png", hint: "tailwind logo" },
-  { name: "Firebase", image: "https://placehold.co/128x128.png", hint: "firebase logo" },
-  { name: "Genkit", image: "https://placehold.co/128x128.png", hint: "genkit logo" },
-  { name: "TypeScript", image: "https://placehold.co/128x128.png", hint: "typescript logo" },
-  { name: "Node.js", image: "https://placehold.co/128x128.png", hint: "nodejs logo" },
-  { name: "Vercel", image: "https://placehold.co/128x128.png", hint: "vercel logo" },
-];
+  enterpriseSolutions: [
+    {
+      title: "Software a Medida",
+      description: "Creamos soluciones de software personalizadas y escalables que se adaptan a las necesidades específicas de tu empresa.",
+      icon: <Puzzle className="w-8 h-8 text-primary" />
+    },
+    {
+      title: "Consultoría Tecnológica",
+      description: "Te ayudamos a alinear tu estrategia tecnológica con tus objetivos de negocio para un crecimiento sostenible.",
+      icon: <TrendingUp className="w-8 h-8 text-primary" />
+    },
+    {
+      title: "Modernización de Sistemas",
+      description: "Actualizamos tus sistemas heredados a arquitecturas modernas, mejorando la eficiencia y la seguridad.",
+      icon: <RefreshCw className="w-8 h-8 text-primary" />
+    }
+  ],
+  appSolutions: [
+    {
+      title: "Transporte On-Demand",
+      description: "Conectamos usuarios y conductores de forma eficiente y fiable.",
+      image: "https://placehold.co/600x400.png",
+      hint: "city street"
+    },
+    {
+      title: "Estancias Únicas",
+      description: "Plataformas de alquiler vacacional con experiencias excepcionales.",
+      image: "https://placehold.co/600x400.png",
+      hint: "modern interior"
+    },
+    {
+      title: "Entrega de Comida",
+      description: "Soluciones rápidas y eficientes para restaurantes y clientes.",
+      image: "https://placehold.co/600x400.png",
+      hint: "food delivery"
+    },
+    {
+      title: "Fitness Personal",
+      description: "Apps que motivan y guían a los usuarios hacia sus metas de salud.",
+      image: "https://placehold.co/600x400.png",
+      hint: "fitness workout"
+    }
+  ],
+  technologies: [
+    { name: "Next.js", image: "https://placehold.co/128x128.png", hint: "nextjs logo" },
+    { name: "React", image: "https://placehold.co/128x128.png", hint: "react logo" },
+    { name: "Tailwind CSS", image: "https://placehold.co/128x128.png", hint: "tailwind logo" },
+    { name: "Firebase", image: "https://placehold.co/128x128.png", hint: "firebase logo" },
+    { name: "Genkit", image: "https://placehold.co/128x128.png", hint: "genkit logo" },
+    { name: "TypeScript", image: "https://placehold.co/128x128.png", hint: "typescript logo" },
+    { name: "Node.js", image: "https://placehold.co/128x128.png", hint: "nodejs logo" },
+    { name: "Vercel", image: "https://placehold.co/128x128.png", hint: "vercel logo" },
+  ]
+};
 
 
 // Page Sections
 const Hero = () => (
   <section className="relative h-screen flex items-center justify-center text-center text-white bg-black">
-    <Image src="https://placehold.co/1920x1080.png" alt="Equipo de Albaidex colaborando en un proyecto" layout="fill" objectFit="cover" className="opacity-40" data-ai-hint="modern office collaboration"/>
+    <Image src={pageData.hero.image} alt="Equipo de Albaidex colaborando en un proyecto" layout="fill" objectFit="cover" className="opacity-40" data-ai-hint={pageData.hero.hint}/>
     <div className="relative z-10 p-4 fade-in">
         <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight text-white">Software que te impulsa.</h1>
         <p className="mt-6 max-w-2xl mx-auto text-xl md:text-2xl text-gray-200">Creamos soluciones potentes y elegantes para empresas e individuos con visión de futuro.</p>
@@ -84,7 +88,7 @@ const Hero = () => (
 );
 
 const TechnologySlider = () => {
-    const extendedTechnologies = [...technologies, ...technologies];
+    const extendedTechnologies = [...pageData.technologies, ...pageData.technologies];
 
     return (
         <section className="py-20 md:py-32 bg-background overflow-hidden">
@@ -171,7 +175,7 @@ export default function Home() {
 
             {activeView === 'enterprise' ? (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 fade-in">
-                {enterpriseSolutions.map((solution) => (
+                {pageData.enterpriseSolutions.map((solution) => (
                   <Card key={solution.title} className="card-hover flex flex-col text-center items-center p-4">
                     <CardHeader>
                       <div className="bg-muted rounded-full p-4 mb-4">
@@ -187,7 +191,7 @@ export default function Home() {
               </div>
             ) : (
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 fade-in">
-                 {appSolutions.map((solution) => (
+                 {pageData.appSolutions.map((solution) => (
                   <Card key={solution.title} className="card-hover flex flex-col overflow-hidden">
                     <Image 
                         src={solution.image} 
