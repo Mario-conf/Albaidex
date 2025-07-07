@@ -117,11 +117,27 @@ const enterpriseSolutions = [
 const appSolutions = [
   {
     title: "Transporte On-Demand",
-    description: "Desarrollamos aplicaciones de transporte intuitivas y fiables para conectar a usuarios y conductores de forma eficiente."
+    description: "Conectamos usuarios y conductores de forma eficiente y fiable.",
+    image: "https://placehold.co/600x400.png",
+    hint: "city street"
   },
   {
     title: "Estancias Únicas",
-    description: "Construimos plataformas de alquiler vacacional con experiencias de usuario excepcionales y gestión simplificada."
+    description: "Plataformas de alquiler vacacional con experiencias excepcionales.",
+    image: "https://placehold.co/600x400.png",
+    hint: "modern interior"
+  },
+  {
+    title: "Entrega de Comida",
+    description: "Soluciones rápidas y eficientes para restaurantes y clientes.",
+    image: "https://placehold.co/600x400.png",
+    hint: "food delivery"
+  },
+  {
+    title: "Fitness Personal",
+    description: "Apps que motivan y guían a los usuarios hacia sus metas de salud.",
+    image: "https://placehold.co/600x400.png",
+    hint: "fitness workout"
   }
 ];
 
@@ -177,9 +193,17 @@ export default function Home() {
                 ))}
               </div>
             ) : (
-              <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mt-12 fade-in">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 fade-in">
                  {appSolutions.map((solution) => (
-                  <Card key={solution.title} className="card-hover flex flex-col">
+                  <Card key={solution.title} className="card-hover flex flex-col overflow-hidden">
+                    <Image 
+                        src={solution.image} 
+                        alt={solution.title} 
+                        width={600} 
+                        height={400} 
+                        className="w-full h-48 object-cover"
+                        data-ai-hint={solution.hint}
+                    />
                     <CardHeader>
                       <CardTitle>{solution.title}</CardTitle>
                     </CardHeader>
