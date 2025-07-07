@@ -172,36 +172,30 @@ const Philosophy = () => (
         </p>
       </div>
       <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mt-12 fade-in">
-        <Card className="card-hover flex flex-col text-center items-center p-6">
-          <CardHeader>
-            <div className="bg-background rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-md">
+        <Card className="card-hover flex flex-col">
+          <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
+            <div className="bg-background rounded-xl w-full p-6 mb-6 flex justify-center">
               <Github className="w-10 h-10 text-primary" />
             </div>
-            <CardTitle>Open Code</CardTitle>
-          </CardHeader>
-          <CardContent>
+            <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Open Code</h3>
             <p className="text-muted-foreground">La mayoría de nuestras apps son de código accesible, promoviendo la transparencia y la colaboración comunitaria bajo licencias claras.</p>
           </CardContent>
         </Card>
-        <Card className="card-hover flex flex-col text-center items-center p-6">
-          <CardHeader>
-            <div className="bg-background rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-md">
+        <Card className="card-hover flex flex-col">
+          <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
+            <div className="bg-background rounded-xl w-full p-6 mb-6 flex justify-center">
               <Sparkles className="w-10 h-10 text-primary" />
             </div>
-            <CardTitle>IA Esencial</CardTitle>
-          </CardHeader>
-          <CardContent>
+            <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">IA Esencial</h3>
             <p className="text-muted-foreground">Apostamos por la Inteligencia Artificial como una herramienta indispensable en nuestros procesos de desarrollo para crear soluciones más inteligentes.</p>
           </CardContent>
         </Card>
-        <Card className="card-hover flex flex-col text-center items-center p-6">
-          <CardHeader>
-            <div className="bg-background rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-md">
+        <Card className="card-hover flex flex-col">
+          <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
+            <div className="bg-background rounded-xl w-full p-6 mb-6 flex justify-center">
               <Zap className="w-10 h-10 text-primary" />
             </div>
-            <CardTitle>Eficiencia Radical</CardTitle>
-          </CardHeader>
-          <CardContent>
+            <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Eficiencia Radical</h3>
             <p className="text-muted-foreground">Priorizamos la eficiencia y la automatización sobre el romanticismo del trabajo manual. Entregamos resultados, no horas.</p>
           </CardContent>
         </Card>
@@ -220,25 +214,21 @@ const Scope = () => (
         </p>
       </div>
       <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mt-12 fade-in max-w-4xl mx-auto">
-        <Card className="card-hover flex flex-col text-center items-center p-6">
-          <CardHeader>
-            <div className="bg-muted rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-md">
+        <Card className="card-hover flex flex-col">
+          <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
+            <div className="bg-muted rounded-xl w-full p-6 mb-6 flex justify-center">
               <Globe className="w-10 h-10 text-primary" />
             </div>
-            <CardTitle>Clientes Internacionales</CardTitle>
-          </CardHeader>
-          <CardContent>
+            <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Clientes Internacionales</h3>
             <p className="text-muted-foreground">Nuestro alcance es global, colaboramos con clientes y empresas de cualquier país para llevar sus ideas al siguiente nivel.</p>
           </CardContent>
         </Card>
-        <Card className="card-hover flex flex-col text-center items-center p-6">
-          <CardHeader>
-            <div className="bg-muted rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-md">
+        <Card className="card-hover flex flex-col">
+          <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
+            <div className="bg-muted rounded-xl w-full p-6 mb-6 flex justify-center">
               <Wifi className="w-10 h-10 text-primary" />
             </div>
-            <CardTitle>Trabajo 100% Remoto</CardTitle>
-          </CardHeader>
-          <CardContent>
+            <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Trabajo 100% Remoto</h3>
             <p className="text-muted-foreground">Operamos de forma completamente remota, lo que nos permite ser más ágiles, eficientes y atraer al mejor talento sin importar la ubicación.</p>
           </CardContent>
         </Card>
@@ -257,31 +247,27 @@ const Security = () => (
                 </p>
             </div>
             <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mt-12 fade-in max-w-4xl mx-auto">
-                <Card className="card-hover flex flex-col text-center items-center p-6">
-                    <CardHeader>
-                      <div className="bg-background rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-md">
-                        <ShieldCheck className="w-10 h-10 text-primary" />
-                      </div>
-                      <CardTitle>Responsabilidad del Usuario</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <p className="text-muted-foreground">
-                          La seguridad de tu cuenta es un esfuerzo conjunto. Eres responsable de custodiar tus credenciales, y por nuestra parte, implementamos políticas como la rotación periódica de contraseñas y la restricción de claves recientes para fortalecer la protección de tus datos.
-                        </p>
-                    </CardContent>
+                <Card className="card-hover flex flex-col">
+                  <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
+                    <div className="bg-background rounded-xl w-full p-6 mb-6 flex justify-center">
+                      <ShieldCheck className="w-10 h-10 text-primary" />
+                    </div>
+                    <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Responsabilidad del Usuario</h3>
+                    <p className="text-muted-foreground">
+                      La seguridad de tu cuenta es un esfuerzo conjunto. Eres responsable de custodiar tus credenciales, y por nuestra parte, implementamos políticas como la rotación periódica de contraseñas y la restricción de claves recientes para fortalecer la protección de tus datos.
+                    </p>
+                  </CardContent>
                 </Card>
-                <Card className="card-hover flex flex-col text-center items-center p-6">
-                    <CardHeader>
-                      <div className="bg-background rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-md">
-                        <DatabaseZap className="w-10 h-10 text-primary" />
-                      </div>
-                      <CardTitle>Protección de Datos</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <p className="text-muted-foreground">
-                            Protegemos los datos con encriptación en bases de datos MySQL. Sin embargo, no nos hacemos responsables de accesos indebidos por negligencia del usuario en la custodia de sus credenciales.
-                        </p>
-                    </CardContent>
+                <Card className="card-hover flex flex-col">
+                  <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
+                    <div className="bg-background rounded-xl w-full p-6 mb-6 flex justify-center">
+                      <DatabaseZap className="w-10 h-10 text-primary" />
+                    </div>
+                    <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Protección de Datos</h3>
+                    <p className="text-muted-foreground">
+                        Protegemos los datos con encriptación en bases de datos MySQL. Sin embargo, no nos hacemos responsables de accesos indebidos por negligencia del usuario en la custodia de sus credenciales.
+                    </p>
+                  </CardContent>
                 </Card>
             </div>
         </div>
@@ -339,14 +325,12 @@ export default function Home() {
             {activeView === 'enterprise' ? (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 fade-in">
                 {pageData.enterpriseSolutions.map((solution) => (
-                  <Card key={solution.title} className="card-hover flex flex-col text-center items-center p-6">
-                    <CardHeader>
-                      <div className="bg-muted rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-md">
+                  <Card key={solution.title} className="card-hover flex flex-col">
+                    <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
+                      <div className="bg-muted rounded-xl w-full p-6 mb-6 flex justify-center">
                         {solution.icon}
                       </div>
-                      <CardTitle>{solution.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
+                      <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">{solution.title}</h3>
                       <p className="text-muted-foreground">{solution.description}</p>
                     </CardContent>
                   </Card>
@@ -401,9 +385,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    
-
-    
