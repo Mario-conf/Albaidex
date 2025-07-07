@@ -1,226 +1,232 @@
-
 import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { TaglineGenerator } from "@/components/tagline-generator";
 import { ContactForm } from "@/components/contact-form";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code2, PenTool, CloudCog, Wrench, PiggyBank, FolderKanban, HeartPulse, Sparkles } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+
+// Using inline SVGs as they are custom and not in lucide-react
+const CustomSoftwareIcon = () => (
+  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9.75 6.375c.621 1.026 1.511 1.838 2.528 2.457A7.5 7.5 0 0018 16.5c.346 0 .684-.044 1.012-.128a7.525 7.525 0 00-4.01-4.425 7.5 7.5 0 00-8.49 5.25z" strokeLinecap="round" strokeLinejoin="round"></path>
+  </svg>
+);
+
+const ITConsultingIcon = () => (
+  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" strokeLinecap="round" strokeLinejoin="round"></path>
+  </svg>
+);
+
+const SystemModernizationIcon = () => (
+    <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.82m5.84-2.56a14.977 14.977 0 01-2.07 5.01m-1.72-5.01a14.977 14.977 0 00-2.07-5.01m6.09-3.32a14.977 14.977 0 01-5.84 7.38m5.84-7.38a14.977 14.977 0 00-5.84-7.38m5.84 7.38l-5.84 7.38m0-14.76l5.84 7.38" strokeLinecap="round" strokeLinejoin="round"></path>
+    </svg>
+);
+
+const ArrowRightIcon = () => (
+    <svg className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
+    </svg>
+);
+
 
 const Hero = () => (
-  <section id="home" className="container mx-auto text-center py-20 md:py-32">
-    <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight mb-4">Innovación Digital desde el Corazón de Granada</h1>
-    <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-      En Albaidex, fusionamos tecnología de vanguardia y visión estratégica para crear soluciones digitales que impulsan tu negocio.
-    </p>
-    <Button size="lg" asChild>
-      <Link href="#contact">Solicita un Presupuesto</Link>
-    </Button>
+  <section className="h-screen flex items-center justify-center text-foreground relative">
+    <div className="absolute inset-0 bg-black/40 z-10" />
+    <Image
+        src="https://placehold.co/1920x1080.png"
+        alt="Team collaborating on a project"
+        fill
+        className="object-cover"
+        quality={100}
+        priority
+        data-ai-hint="business team collaboration"
+    />
+    <div className="relative text-center px-4 text-white z-20">
+      <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight">Software that moves you.</h1>
+      <p className="mt-6 max-w-2xl mx-auto text-xl md:text-2xl text-gray-200">We build powerful, elegant solutions for visionary businesses and individuals.</p>
+      <Button asChild size="lg" className="mt-10 h-auto py-4 px-10 text-lg font-bold shadow-lg text-primary-foreground">
+        <Link href="#contact">Start Your Project</Link>
+      </Button>
+    </div>
   </section>
 );
 
-const services = [
-  {
-    icon: <Code2 className="h-10 w-10 text-primary" />,
-    title: "Desarrollo a Medida",
-    description: "Construimos aplicaciones web y móviles personalizadas que resuelven tus desafíos de negocio y potencian el crecimiento.",
-  },
-  {
-    icon: <PenTool className="h-10 w-10 text-primary" />,
-    title: "Diseño UI/UX",
-    description: "Nuestro equipo de diseño crea interfaces intuitivas y atractivas que garantizan una experiencia de usuario excepcional.",
-  },
-  {
-    icon: <CloudCog className="h-10 w-10 text-primary" />,
-    title: "Integración Cloud",
-    description: "Aprovecha el poder de la nube con nuestros servicios de integración para una escalabilidad y eficiencia sin precedentes.",
-  },
-  {
-    icon: <Wrench className="h-10 w-10 text-primary" />,
-    title: "Mantenimiento y Soporte",
-    description: "Ofrecemos soporte y mantenimiento continuo para asegurar que tus aplicaciones funcionen de forma segura y eficiente.",
-  },
-];
+const ServiceCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
+    <div className="bg-card p-8 rounded-xl border border-gray-100 transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+        <div className="flex items-center justify-center h-16 w-16 bg-muted rounded-full mb-6">
+            {icon}
+        </div>
+        <h4 className="text-2xl font-bold">{title}</h4>
+        <p className="mt-3 text-muted-foreground">{description}</p>
+    </div>
+);
 
-const Services = () => (
-  <section id="services" className="bg-card py-20 md:py-24">
-    <div className="container mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold font-headline">Nuestros Servicios para Empresas</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">Servicios de desarrollo de ciclo completo para llevar tu proyecto de la idea al lanzamiento.</p>
+const ServicesBusiness = () => (
+  <section id="services-business" className="py-20 md:py-32 bg-background">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">For Your Business</h2>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Driving growth and efficiency with cutting-edge technology.</p>
+      </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <ServiceCard 
+          icon={<CustomSoftwareIcon />}
+          title="Custom Software"
+          description="Bespoke applications built from the ground up to meet your exact business needs and goals."
+        />
+        <ServiceCard 
+          icon={<ITConsultingIcon />}
+          title="IT Consulting"
+          description="Expert strategic advice to align your technology with your business objectives for maximum impact."
+        />
+        <ServiceCard 
+          icon={<SystemModernizationIcon />}
+          title="System Modernization"
+          description="Upgrading legacy systems to enhance performance, security, and user experience."
+        />
+      </div>
+    </div>
+  </section>
+);
+
+const IndividualServiceCard = ({ imageUrl, imageAlt, hint, title, description }: { imageUrl: string, imageAlt: string, hint: string, title: string, description: string }) => (
+    <div className="bg-card rounded-xl overflow-hidden border border-gray-100 transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+        <Image src={imageUrl} alt={imageAlt} width={600} height={400} className="w-full h-64 object-cover" data-ai-hint={hint} />
+        <div className="p-8">
+            <h4 className="text-2xl font-bold">{title}</h4>
+            <p className="mt-3 text-muted-foreground">{description}</p>
+        </div>
+    </div>
+);
+
+const ServicesIndividual = () => (
+  <section id="services-individual" className="py-20 md:py-32 bg-muted">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-16">
+        <h3 className="text-4xl md:text-5xl font-bold tracking-tight">For You</h3>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Intuitive, life-enhancing applications for everyday needs.</p>
       </div>
       <div className="grid md:grid-cols-2 gap-10">
-        {services.map((service, index) => (
-          <Card key={index} className="flex flex-col items-center text-center p-8 transition-all transform hover:-translate-y-2 hover:shadow-primary/20 hover:shadow-lg border-transparent hover:border-primary/30">
-            <div className="mb-4">{service.icon}</div>
-            <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-            <p className="text-muted-foreground">{service.description}</p>
-          </Card>
-        ))}
+        <IndividualServiceCard 
+            imageUrl="https://placehold.co/600x400.png"
+            imageAlt="Ride-sharing app"
+            hint="ride sharing app"
+            title="On-Demand Transport"
+            description="Get where you need to go with seamless, reliable ride-sharing platforms inspired by the best."
+        />
+        <IndividualServiceCard 
+            imageUrl="https://placehold.co/600x400.png"
+            imageAlt="Vacation rental platform"
+            hint="vacation rental home"
+            title="Unique Stays"
+            description="Discover and book unique accommodations with feature-rich rental platforms."
+        />
       </div>
     </div>
   </section>
 );
 
-const freeApps = [
-  {
-    icon: <PiggyBank className="h-8 w-8 text-primary" />,
-    title: "SavvySaver",
-    description: "Una app intuitiva para seguir tus gastos y ahorrar dinero sin esfuerzo.",
-  },
-  {
-    icon: <FolderKanban className="h-8 w-8 text-primary" />,
-    title: "Org-nize",
-    description: "Organiza tus tareas, notas y proyectos en una herramienta simple y potente.",
-  },
-  {
-    icon: <HeartPulse className="h-8 w-8 text-primary" />,
-    title: "HealthHub",
-    description: "Tu compañero de salud personal para seguir tus metas de fitness y bienestar.",
-  },
-];
-
-
-const blogPosts = [
-  {
-    image: "https://placehold.co/600x400.png",
-    hint: "granada alhambra",
-    title: "Impulsando la Innovación: El Ecosistema Tecnológico de Granada",
-    excerpt: "Descubre cómo Granada se está convirtiendo en un hub tecnológico clave en el sur de Europa, combinando historia, cultura y tecnología de vanguardia para fomentar un entorno de startups vibrante y en crecimiento.",
-  },
-  {
-    image: "https://placehold.co/600x400.png",
-    hint: "user experience",
-    title: "Diseño Centrado en el Usuario: La Clave del Éxito Digital",
-    excerpt: "Un análisis profundo de por qué un enfoque de diseño centrado en el usuario es una necesidad para el éxito de cualquier app.",
-  },
-  {
-    image: "https://placehold.co/600x400.png",
-    hint: "cloud computing",
-    title: "Escalabilidad sin Límites con Aplicaciones en la Nube",
-    excerpt: "Entiende cómo las aplicaciones nativas en la nube pueden proporcionar la flexibilidad que tu negocio necesita para crecer.",
-  },
-];
-
-const Blog = () => (
-    <section id="blog" className="bg-card py-20 md:py-24">
-        <div className="container mx-auto">
-            <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold font-headline">Desde Nuestro Blog</h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">Ideas, noticias y actualizaciones del equipo de Albaidex.</p>
-            </div>
-            <div className="grid lg:grid-cols-3 gap-8 items-start">
-                <Card className="lg:col-span-2 flex flex-col overflow-hidden transition-shadow hover:shadow-lg h-full">
-                    <CardHeader className="p-0">
-                        <Image src={blogPosts[0].image} alt={blogPosts[0].title} width={800} height={450} className="w-full h-64 object-cover" data-ai-hint={blogPosts[0].hint} />
-                    </CardHeader>
-                    <CardContent className="flex-grow p-6">
-                        <p className="text-sm text-primary font-medium mb-2">Destacado</p>
-                        <h3 className="text-2xl font-semibold mb-3">{blogPosts[0].title}</h3>
-                        <p className="text-muted-foreground">{blogPosts[0].excerpt}</p>
-                    </CardContent>
-                    <CardFooter className="p-6 pt-0">
-                        <Button variant="link" className="p-0 h-auto" asChild>
-                            <Link href="#">Leer Más <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                        </Button>
-                    </CardFooter>
-                </Card>
-
-                <div className="space-y-8">
-                    {blogPosts.slice(1).map((post, index) => (
-                        <Card key={index} className="flex flex-col overflow-hidden transition-shadow hover:shadow-lg">
-                            <CardHeader className="p-0">
-                                <Image src={post.image} alt={post.title} width={600} height={400} className="w-full h-40 object-cover" data-ai-hint={post.hint} />
-                            </CardHeader>
-                            <CardContent className="flex-grow p-4">
-                                <h3 className="text-lg font-semibold mb-2">{post.title}</h3>
-                                <p className="text-sm text-muted-foreground line-clamp-2">{post.excerpt}</p>
-                            </CardContent>
-                            <CardFooter className="p-4 pt-0">
-                                <Button variant="link" size="sm" className="p-0 h-auto text-sm" asChild>
-                                    <Link href="#">Leer Más <ArrowRight className="ml-1 h-3 w-3" /></Link>
-                                </Button>
-                            </CardFooter>
-                        </Card>
-                    ))}
-                </div>
-            </div>
+const CaseStudies = () => (
+  <section id="case-studies" className="py-20 md:py-32 bg-background">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-16">
+        <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Proven Success</h3>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">See how we transform industries with innovative solutions.</p>
+      </div>
+      <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="rounded-xl overflow-hidden">
+          <Image src="https://placehold.co/600x500.png" alt="Case study" width={600} height={500} className="w-full h-auto object-cover" data-ai-hint="logistics warehouse" />
         </div>
-    </section>
+        <div className="relative md:-ml-10 bg-card p-8 md:p-12 rounded-xl shadow-xl z-10 border border-gray-100">
+          <span className="text-primary font-bold tracking-widest uppercase">Logistics</span>
+          <h4 className="text-3xl font-bold mt-2">Efficiency Increased by 25%</h4>
+          <p className="mt-4 text-muted-foreground text-lg">We developed a custom ERP system for a major logistics client, streamlining workflows and slashing operational costs.</p>
+          <Link href="#" className="mt-6 inline-flex items-center text-primary font-bold group">
+            <span>Learn More</span>
+            <ArrowRightIcon />
+          </Link>
+        </div>
+      </div>
+    </div>
+  </section>
 );
 
+const TestimonialCard = ({ quote, name, title, imageUrl, hint }: { quote: string, name: string, title: string, imageUrl: string, hint: string }) => (
+    <Card className="p-8 border-gray-100">
+        <CardContent className="p-0">
+            <p className="text-lg text-foreground/80">"{quote}"</p>
+            <div className="mt-6 flex items-center">
+                <Image alt={name} className="w-14 h-14 rounded-full object-cover" src={imageUrl} width={56} height={56} data-ai-hint={hint} />
+                <div className="ml-4">
+                    <p className="font-bold text-foreground">{name}</p>
+                    <p className="text-sm text-primary">{title}</p>
+                </div>
+            </div>
+        </CardContent>
+    </Card>
+);
 
-const FreeTools = () => (
-    <section id="free-tools" className="py-20 md:py-24">
-        <div className="container mx-auto">
+const Testimonials = () => (
+    <section className="py-20 md:py-32 bg-muted">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold font-headline">Herramientas Gratuitas</h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">
-                    Explora nuestras apps y herramientas con IA para mejorar tu día a día y potenciar tus ideas.
-                </p>
+                <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Client Love</h3>
+                <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Our partners' success is our greatest achievement.</p>
             </div>
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
-                <div>
-                    <h3 className="text-2xl font-semibold mb-6">Apps para Todos</h3>
-                    <div className="space-y-6">
-                        {freeApps.map((app, index) => (
-                            <Card key={index} className="flex items-center gap-6 p-4 bg-card transition-shadow hover:shadow-lg">
-                                {app.icon}
-                                <div className="flex-grow">
-                                    <h4 className="font-bold">{app.title}</h4>
-                                    <p className="text-sm text-muted-foreground">{app.description}</p>
-                                </div>
-                                <Button variant="ghost" size="sm" asChild className="flex-shrink-0">
-                                    <Link href="#">
-                                        Probar <ArrowRight className="ml-2 h-4 w-4" />
-                                    </Link>
-                                </Button>
-                            </Card>
-                        ))}
-                    </div>
-                </div>
-
-                <div>
-                    <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3">
-                        <Sparkles className="h-7 w-7 text-primary" />
-                        Generador de Lemas con IA
-                    </h3>
-                    <div className="bg-card rounded-lg p-1">
-                      <TaglineGenerator />
-                    </div>
-                </div>
+            <div className="grid lg:grid-cols-3 gap-8">
+                <TestimonialCard
+                    quote="Albaidex transformed our vision into a scalable, high-performing reality. Their technical skill and commitment are unparalleled."
+                    name="Johnathan Doe"
+                    title="CEO, Tech Innovators"
+                    imageUrl="https://placehold.co/100x100.png"
+                    hint="male portrait professional"
+                />
+                <TestimonialCard
+                    quote="The UX/UI design on our new mobile app is simply outstanding. The Albaidex team was a dream to collaborate with."
+                    name="Jane Smith"
+                    title="Founder, ConnectApp"
+                    imageUrl="https://placehold.co/100x100.png"
+                    hint="female portrait professional"
+                />
+                <TestimonialCard
+                    quote="From day one, Albaidex provided strategic solutions that have future-proofed our IT infrastructure. Truly exceptional service."
+                    name="Michael Brown"
+                    title="CTO, Enterprise Solutions"
+                    imageUrl="https://placehold.co/100x100.png"
+                    hint="male portrait corporate"
+                />
             </div>
         </div>
     </section>
 );
 
 
-const ContactSection = () => (
-  <section id="contact" className="bg-card py-20 md:py-24">
-    <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
-      <div className="text-center lg:text-left">
-        <h2 className="text-3xl md:text-4xl font-bold font-headline">Construyamos Juntos</h2>
-        <p className="text-lg text-muted-foreground mt-4">
-          ¿Tienes un proyecto en mente? Nos encantaría escucharlo. Rellena el formulario y nos pondremos en contacto contigo.
-        </p>
-      </div>
-      <ContactForm />
-    </div>
-  </section>
+const Contact = () => (
+    <section id="contact" className="bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+            <div className="max-w-3xl mx-auto text-center">
+                <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Ready to build something amazing?</h3>
+                <p className="mt-4 text-lg text-muted-foreground">Let's talk about your next project.</p>
+            </div>
+            <ContactForm />
+        </div>
+    </section>
 );
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
+    <div className="flex flex-col min-h-screen bg-background">
       <Header />
-      <main className="flex-1">
+      <main className="flex-grow">
         <Hero />
-        <Services />
-        <FreeTools />
-        <Blog />
-        <ContactSection />
+        <ServicesBusiness />
+        <ServicesIndividual />
+        <CaseStudies />
+        <Testimonials />
+        <Contact />
       </main>
       <Footer />
     </div>

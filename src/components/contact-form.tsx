@@ -8,15 +8,13 @@ import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { Loader2 } from 'lucide-react';
 
 const formSchema = z.object({
-  name: z.string().min(2, "El nombre es obligatorio."),
-  email: z.string().email("Por favor, introduce una dirección de correo válida."),
-  company: z.string().optional(),
-  message: z.string().min(10, "El mensaje debe tener al menos 10 caracteres."),
+  name: z.string().min(2, "Name is required."),
+  email: z.string().email("Please enter a valid email address."),
+  message: z.string().min(10, "Message must be at least 10 characters long."),
 });
 
 export function ContactForm() {
@@ -26,7 +24,6 @@ export function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
-      company: "",
       message: "",
     },
   });
@@ -40,78 +37,64 @@ export function ContactForm() {
       if (result.error) {
         toast({ variant: 'destructive', title: 'Error', description: result.error });
       } else {
-        toast({ title: '¡Éxito!', description: result.success });
+        toast({ title: 'Success!', description: result.success });
         form.reset();
       }
     } catch (error) {
-      toast({ variant: 'destructive', title: 'Error', description: 'Ha ocurrido un error inesperado.' });
+      toast({ variant: 'destructive', title: 'Error', description: 'An unexpected error occurred.' });
     }
   }
 
   return (
-    <Card className="w-full bg-card">
-      <CardContent className="p-6">
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Tu Nombre</FormLabel>
-                  <FormControl>
-                    <Input placeholder="John Doe" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Correo Electrónico</FormLabel>
-                  <FormControl>
-                    <Input placeholder="john@example.com" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="company"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Empresa (Opcional)</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Tu Empresa S.L." {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Mensaje</FormLabel>
-                  <FormControl>
-                    <Textarea placeholder="Cuéntanos sobre tu proyecto..." className="min-h-[100px]" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button type="submit" disabled={isSubmitting} className="w-full">
-              {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-              {isSubmitting ? 'Enviando...' : 'Enviar Consulta'}
-            </Button>
-          </form>
-        </Form>
-      </CardContent>
-    </Card>
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="mt-16 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input placeholder="Your Name" {...field} className="bg-muted border-gray-300 p-4 h-12 focus:ring-2 focus:ring-ring focus:border-ring transition"/>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input placeholder="Your Email" type="email" {...field} className="bg-muted border-gray-300 p-4 h-12 focus:ring-2 focus:ring-ring focus:border-ring transition"/>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        <div className="mt-6">
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Textarea placeholder="Tell us about your project..." rows={6} {...field} className="bg-muted border-gray-300 p-4 focus:ring-2 focus:ring-ring focus:border-ring transition" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        <div className="mt-8 text-center">
+          <Button type="submit" disabled={isSubmitting} size="lg" className="w-full md:w-auto h-auto py-4 px-12 text-lg font-bold shadow-lg">
+            {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+            {isSubmitting ? 'Sending...' : 'Send Message'}
+          </Button>
+        </div>
+      </form>
+    </Form>
   );
 }
