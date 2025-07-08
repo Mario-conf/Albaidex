@@ -299,8 +299,8 @@ const Contact = () => {
     <section id="contact" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-xl mx-auto text-center fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">¿Listo para construir algo increíble?</h2>
-          <p className="mt-4 text-lg text-muted-foreground">Hablemos de tu próximo proyecto.</p>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Estamos a un clic. Literalmente</h2>
+          <p className="mt-4 text-lg text-muted-foreground">Elige cómo prefieres hablar con nosotros, de forma rápida y sencilla.</p>
           <Card className="mt-12 text-left shadow-lg overflow-hidden bg-muted">
             <div className="p-6">
               <div className="flex items-center mb-6">
