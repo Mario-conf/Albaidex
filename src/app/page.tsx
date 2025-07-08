@@ -305,7 +305,7 @@ const Contact = () => {
             <div className="p-6">
               <div className="flex justify-center mb-6">
                 <Image 
-                  src="/img/img/logo.png"
+                  src="/img/img/logoalbaidex.png"
                   alt="Albaidex Logo"
                   width={180}
                   height={45}
