@@ -305,10 +305,10 @@ const Contact = () => {
             <div className="p-6">
               <div className="flex justify-center mb-6">
                 <Image 
-                  src="/img/img/logoalbaidex.png"
+                  src="/img/img/icons/logoalbaidex.png"
                   alt="Albaidex Logo"
                   width={180}
-                  height={45}
+                  height={90}
                   className="object-contain"
                   data-ai-hint="company logo"
                 />
