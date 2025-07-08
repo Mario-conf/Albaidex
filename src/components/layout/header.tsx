@@ -36,11 +36,13 @@ export const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link href="#" className="flex items-center gap-3">
-            <Isotype
-              className="h-9 w-9"
-              pomegranateClassName={scrolled ? 'fill-primary' : 'fill-white'}
-              bracketsClassName={scrolled ? 'stroke-[hsl(var(--background))]' : 'stroke-[hsl(var(--primary))]'}
-            />
+            <div className={`p-1.5 rounded-lg transition-colors ${!scrolled && 'bg-primary'}`}>
+              <Isotype
+                className="h-7 w-7"
+                pomegranateClassName={scrolled ? 'fill-primary' : 'fill-white'}
+                bracketsClassName={scrolled ? 'stroke-[hsl(var(--background))]' : 'stroke-primary'}
+              />
+            </div>
             <span className={`text-2xl font-bold transition-colors ${scrolled ? 'text-foreground' : 'text-white'}`}>
               Albaidex
             </span>
@@ -67,11 +69,13 @@ export const Header = () => {
               <SheetContent side="right" className="w-[280px] bg-background">
                 <div className="flex flex-col h-full p-6">
                   <Link href="#" className="flex items-center gap-3 mb-8" onClick={() => setMobileMenuOpen(false)}>
-                    <Isotype
-                      className="h-8 w-8 text-primary"
-                      pomegranateClassName='fill-primary'
-                      bracketsClassName='stroke-[hsl(var(--background))]'
-                    />
+                    <div className="p-1.5 rounded-lg bg-primary">
+                      <Isotype
+                        className="h-7 w-7"
+                        pomegranateClassName='fill-white'
+                        bracketsClassName='stroke-primary'
+                      />
+                    </div>
                     <span className="text-2xl font-bold text-foreground">
                       Albaidex
                     </span>

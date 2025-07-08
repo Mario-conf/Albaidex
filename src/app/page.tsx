@@ -305,7 +305,7 @@ const Contact = () => {
           <Card className="mt-12 text-left shadow-lg overflow-hidden">
             <div className="p-6">
               <div className="flex items-center mb-6">
-                <div className="bg-primary p-3 rounded-full mr-4">
+                <div className="bg-primary p-3 rounded-lg mr-4">
                   <Isotype className="w-6 h-6" pomegranateClassName="fill-white" bracketsClassName="stroke-[hsl(var(--primary))]" />
                 </div>
                 <div>
@@ -381,7 +381,7 @@ export default function Home() {
                 {pageData.enterpriseSolutions.map((solution) => (
                   <Card key={solution.title} className="card-hover flex flex-col">
                     <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-                      <div className="bg-background rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
+                      <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
                         {solution.icon}
                       </div>
                       <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">{solution.title}</h3>

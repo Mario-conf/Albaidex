@@ -8,7 +8,9 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 text-center md:text-left">
           <div className="md:col-span-12 lg:col-span-5">
              <Link href="#" className="inline-flex items-center gap-3 text-2xl font-bold text-white">
-                <Isotype className="h-8 w-8" pomegranateClassName="fill-white" bracketsClassName="stroke-[hsl(var(--primary))]" />
+                <div className="bg-primary p-1.5 rounded-lg">
+                  <Isotype className="h-7 w-7" pomegranateClassName="fill-white" bracketsClassName="stroke-primary" />
+                </div>
                 Albaidex
              </Link>
              <p className="text-sm text-gray-400 mt-2 max-w-xs mx-auto md:mx-0">Software inteligente, desarrollado con inteligencia.</p>
