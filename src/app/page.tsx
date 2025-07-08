@@ -24,7 +24,9 @@ import {
   Zap,
   Rocket,
   Mail,
-  ClipboardCopy
+  ClipboardCopy,
+  Linkedin,
+  ArrowUpRight
 } from "lucide-react";
 
 // All dynamic page content is centralized here for easy editing.
@@ -147,8 +149,8 @@ const TechnologySlider = () => {
                     <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Usamos tecnologías modernas y fiables para construir soluciones de alta calidad.</p>
                 </div>
             </div>
-            <div className="relative fade-in">
-                <div className="flex w-max animate-marquee">
+            <div className="relative fade-in group">
+                <div className="flex w-max animate-marquee group-hover:[animation-play-state:running]">
                     {extendedTechnologies.map((tech, index) => (
                         <div key={index} className="flex-shrink-0 w-52 px-4">
                             <div className="flex flex-col items-center justify-center p-6 bg-card rounded-2xl border border-border/50 h-32">
@@ -262,7 +264,7 @@ const Security = () => (
                     </div>
                     <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Responsabilidad del Usuario</h3>
                     <p className="text-muted-foreground">
-                      Te pedimos que uses contraseñas seguras y no las compartas. Nosotros aplicamos medidas como el cambio periódico obligatorio de contraseña y bloqueos ante repeticiones. Si tú cuidas tu acceso, nosotros nos encargamos del resto.
+                      La seguridad es una responsabilidad compartida. Protege tus credenciales y sigue las buenas prácticas; nosotros nos encargamos de la seguridad de la plataforma para crear un entorno seguro para todos.
                     </p>
                   </CardContent>
                 </Card>
@@ -273,7 +275,7 @@ const Security = () => (
                     </div>
                     <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Protección de Datos</h3>
                     <p className="text-muted-foreground">
-                      En nuestras plataformas, la seguridad es una parte esencial de todo lo que hacemos. Aplicamos buenas prácticas para proteger tus datos y mantener la integridad de nuestras aplicaciones. Pero la seguridad también depende de ti: proteger tus credenciales y seguir las recomendaciones es clave para una experiencia segura.
+                      Aplicamos prácticas de seguridad robustas para proteger tus datos y la integridad de nuestras aplicaciones. Tu confianza es fundamental, y la cuidamos con la máxima seriedad.
                     </p>
                   </CardContent>
                 </Card>
@@ -285,8 +287,8 @@ const Security = () => (
 const Contact = () => {
   const { toast } = useToast();
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText('contacto@albaidex.com');
+  const handleCopy = (textToCopy: string) => {
+    navigator.clipboard.writeText(textToCopy);
     toast({
       title: "Email copiado",
       description: "La dirección de correo ha sido copiada al portapapeles.",
@@ -296,20 +298,38 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 md:py-32 bg-muted">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center fade-in">
+        <div className="max-w-xl mx-auto text-center fade-in">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">¿Listo para construir algo increíble?</h2>
           <p className="mt-4 text-lg text-muted-foreground">Hablemos de tu próximo proyecto.</p>
-          <Card className="mt-12 text-center shadow-lg">
-            <CardContent className="p-8 flex flex-col items-center justify-center gap-6">
-              <div className="flex items-center gap-4 text-xl md:text-2xl font-semibold text-foreground">
-                <Mail className="w-8 h-8 text-primary"/>
-                <span>contacto@albaidex.com</span>
+          <Card className="mt-12 text-left shadow-lg overflow-hidden">
+            <div className="p-6">
+              <div className="flex items-center mb-6">
+                <div className="bg-primary p-3 rounded-full mr-4">
+                  <svg className="w-6 h-6 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-foreground">Albaidex</h3>
+                  <p className="text-sm text-muted-foreground">Software inteligente, desarrollado con inteligencia.</p>
+                </div>
               </div>
-              <Button onClick={handleCopy} size="lg">
-                <ClipboardCopy className="mr-2 h-4 w-4" />
-                Copiar Email
-              </Button>
-            </CardContent>
+
+              <div className="space-y-3">
+                <div className="flex items-center p-3 rounded-lg bg-background transition-colors duration-200 ease-in-out hover:bg-accent group">
+                  <Mail className="w-5 h-5 text-primary" />
+                  <a href="mailto:contacto@albaidex.com" className="ml-4 text-sm font-medium text-foreground">contacto@albaidex.com</a>
+                  <Button variant="ghost" size="icon" className="ml-auto h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity" onClick={() => handleCopy('contacto@albaidex.com')}>
+                    <ClipboardCopy className="w-4 h-4" />
+                    <span className="sr-only">Copiar email</span>
+                  </Button>
+                </div>
+                
+                <a href="#" className="flex items-center p-3 rounded-lg bg-background transition-colors duration-200 ease-in-out hover:bg-accent group" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="w-5 h-5 text-primary" />
+                  <span className="ml-4 text-sm font-medium text-foreground">Conectar en LinkedIn</span>
+                  <ArrowUpRight className="w-5 h-5 ml-auto text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+              </div>
+            </div>
           </Card>
         </div>
       </div>
