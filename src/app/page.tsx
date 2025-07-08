@@ -74,7 +74,7 @@ const pageData = {
     {
       title: "Finanzas67",
       description: "Gestión financiera inteligente para pymes y autónomos.",
-      image: "https://placehold.co/600x400.png",
+      image: "/img/img/app-finanzas67.png",
       hint: "finance dashboard",
       subdomain: "finanzas67.albaidex.com",
       githubUrl: "#"
@@ -82,7 +82,7 @@ const pageData = {
     {
       title: "Notasync",
       description: "Toma de notas colaborativa con sincronización en tiempo real.",
-      image: "https://placehold.co/600x400.png",
+      image: "/img/img/app-notasync.png",
       hint: "notes app interface",
       subdomain: "notasync.albaidex.com",
       githubUrl: "#"
@@ -90,7 +90,7 @@ const pageData = {
     {
       title: "PlaniAdmin",
       description: "Planificación de proyectos y gestión de tareas para equipos.",
-      image: "https://placehold.co/600x400.png",
+      image: "/img/img/app-planiadmin.png",
       hint: "project management board",
       subdomain: "planiadmin.albaidex.com",
       githubUrl: "#"
@@ -98,7 +98,7 @@ const pageData = {
     {
       title: "GestorRecursos",
       description: "Optimiza la asignación y el uso de recursos empresariales.",
-      image: "https://placehold.co/600x400.png",
+      image: "/img/img/app-gestorrecursos.png",
       hint: "resource allocation chart",
       subdomain: "gestorrecursos.albaidex.com",
       githubUrl: "#"
@@ -150,7 +150,7 @@ const TechnologySlider = () => {
                     <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Usamos tecnologías modernas y fiables para construir soluciones de alta calidad.</p>
                 </div>
             </div>
-            <div className="relative fade-in">
+            <div className="relative fade-in group">
                 <div className="flex w-max animate-marquee">
                     {extendedTechnologies.map((tech, index) => (
                         <div key={index} className="flex-shrink-0 w-52 px-4">
@@ -297,16 +297,16 @@ const Contact = () => {
   };
   
   return (
-    <section id="contact" className="py-20 md:py-32 bg-muted">
+    <section id="contact" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-xl mx-auto text-center fade-in">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">¿Listo para construir algo increíble?</h2>
           <p className="mt-4 text-lg text-muted-foreground">Hablemos de tu próximo proyecto.</p>
-          <Card className="mt-12 text-left shadow-lg overflow-hidden">
+          <Card className="mt-12 text-left shadow-lg overflow-hidden bg-muted">
             <div className="p-6">
               <div className="flex items-center mb-6">
                 <div className="bg-primary p-3 rounded-lg mr-4">
-                  <Isotype className="w-6 h-6" pomegranateClassName="fill-white" bracketsClassName="stroke-[hsl(var(--primary))]" />
+                  <Isotype className="w-6 h-6" pomegranateClassName="fill-white" bracketsClassName="stroke-primary" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-foreground">Albaidex</h3>
@@ -347,7 +347,7 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         
-        <section id="soluciones" className="py-20 md:py-32 bg-background">
+        <section id="soluciones" className="py-20 md:py-32 bg-muted">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 fade-in">
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Soluciones a tu medida</h2>
@@ -357,7 +357,7 @@ export default function Home() {
                   : 'Aplicaciones intuitivas que mejoran tu vida cotidiana.'}
               </p>
               <div className="mt-8 flex justify-center">
-                <div className="bg-muted p-1 rounded-full flex items-center gap-1 sm:gap-2">
+                <div className="bg-background p-1 rounded-full flex items-center gap-1 sm:gap-2">
                   <Button
                     onClick={() => setActiveView('enterprise')}
                     variant={activeView === 'enterprise' ? 'default' : 'ghost'}
@@ -381,7 +381,7 @@ export default function Home() {
                 {pageData.enterpriseSolutions.map((solution) => (
                   <Card key={solution.title} className="card-hover flex flex-col">
                     <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-                      <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
+                      <div className="bg-background rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
                         {solution.icon}
                       </div>
                       <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">{solution.title}</h3>
