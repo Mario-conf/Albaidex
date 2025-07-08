@@ -100,14 +100,20 @@ const pageData = {
     }
   ],
   technologies: [
-    { name: "Next.js", image: "https://placehold.co/128x128.png", hint: "nextjs logo" },
-    { name: "React", image: "https://placehold.co/128x128.png", hint: "react logo" },
-    { name: "Tailwind CSS", image: "https://placehold.co/128x128.png", hint: "tailwind logo" },
-    { name: "Firebase", image: "https://placehold.co/128x128.png", hint: "firebase logo" },
-    { name: "Genkit", image: "https://placehold.co/128x128.png", hint: "genkit logo" },
-    { name: "TypeScript", image: "https://placehold.co/128x128.png", hint: "typescript logo" },
-    { name: "Node.js", image: "https://placehold.co/128x128.png", hint: "nodejs logo" },
-    { name: "Vercel", image: "https://placehold.co/128x128.png", hint: "vercel logo" },
+    { name: "Typescript", image: "/img/img/typescript.png", hint: "typescript logo" },
+    { name: "docker", image: "/img/img/docker.png", hint: "docker logo" },
+    { name: "php", image: "/img/img/php.png", hint: "php logo" },
+    { name: "angular", image: "/img/img/angular.png", hint: "angular" },
+    { name: "aws", image: "/img/img/aws.png", hint: "aws logo" },
+    { name: "ubuntu", image: "/img/img/ubuntu.png", hint: "ubuntu logo" },
+    { name: "React", image: "/img/img/react.png", hint: "react logo" },
+    { name: "microsoft", image: "/img/img/microsoft.png", hint: "microsoft logo" },
+    { name: "mysql", image: "/img/img/mysql.png", hint: "mysql logo" },
+    { name: "gcloud", image: "/img/img/gcloud.png", hint: "gcloud logo" },
+    { name: "python", image: "/img/img/python.png", hint: "python" },
+    { name: "htmlcss", image: "/img/img/htmlcss.png", hint: "htmlcss logo" },
+    { name: "java", image: "/img/img/java.png", hint: "java logo" },
+
   ]
 };
 
@@ -144,7 +150,7 @@ const TechnologySlider = () => {
                     {extendedTechnologies.map((tech, index) => (
                         <div key={index} className="flex-shrink-0 w-64 px-4">
                             <div className="flex flex-col items-center justify-center p-6 bg-card rounded-2xl border border-border/50 h-32">
-                                <div className="relative h-20 w-full">
+                                <div className="relative h-20 w-48">
                                   <Image 
                                       src={tech.image} 
                                       alt={tech.name} 
@@ -174,7 +180,7 @@ const Philosophy = () => (
       <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mt-12 fade-in">
         <Card className="card-hover flex flex-col">
           <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-            <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center">
+            <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
               <Github className="w-10 h-10 text-primary" />
             </div>
             <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Open Code</h3>
@@ -183,7 +189,7 @@ const Philosophy = () => (
         </Card>
         <Card className="card-hover flex flex-col">
           <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-            <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center">
+            <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
               <Sparkles className="w-10 h-10 text-primary" />
             </div>
             <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">IA Esencial</h3>
@@ -192,7 +198,7 @@ const Philosophy = () => (
         </Card>
         <Card className="card-hover flex flex-col">
           <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-            <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center">
+            <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
               <Zap className="w-10 h-10 text-primary" />
             </div>
             <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Eficiencia Radical</h3>
@@ -216,7 +222,7 @@ const Scope = () => (
       <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mt-12 fade-in max-w-4xl mx-auto">
         <Card className="card-hover flex flex-col">
           <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-            <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center">
+            <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
               <Globe className="w-10 h-10 text-primary" />
             </div>
             <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Clientes Internacionales</h3>
@@ -225,7 +231,7 @@ const Scope = () => (
         </Card>
         <Card className="card-hover flex flex-col">
           <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-            <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center">
+            <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
               <Wifi className="w-10 h-10 text-primary" />
             </div>
             <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Trabajo 100% Remoto</h3>
@@ -249,7 +255,7 @@ const Security = () => (
             <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mt-12 fade-in max-w-4xl mx-auto">
                 <Card className="card-hover flex flex-col">
                   <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-                    <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center">
+                    <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
                       <ShieldCheck className="w-10 h-10 text-primary" />
                     </div>
                     <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Responsabilidad del Usuario</h3>
@@ -260,7 +266,7 @@ const Security = () => (
                 </Card>
                 <Card className="card-hover flex flex-col">
                   <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-                    <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center">
+                    <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
                       <DatabaseZap className="w-10 h-10 text-primary" />
                     </div>
                     <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Protección de Datos</h3>
@@ -327,7 +333,7 @@ export default function Home() {
                 {pageData.enterpriseSolutions.map((solution) => (
                   <Card key={solution.title} className="card-hover flex flex-col">
                     <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-                      <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center">
+                      <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
                         {solution.icon}
                       </div>
                       <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">{solution.title}</h3>
