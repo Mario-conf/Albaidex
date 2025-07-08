@@ -25,7 +25,7 @@ import {
   Rocket,
   Mail,
   ClipboardCopy,
-  Linkedin,
+  Instagram,
   ArrowUpRight
 } from "lucide-react";
 
@@ -322,16 +322,16 @@ const Contact = () => {
               <div className="space-y-3">
                 <div className="flex items-center p-3 rounded-lg bg-background transition-colors duration-200 ease-in-out hover:bg-accent group">
                   <Mail className="w-5 h-5 text-primary" />
-                  <a href="mailto:contacto@albaidex.com" className="ml-4 text-sm font-medium text-foreground">contacto@albaidex.com</a>
-                  <Button variant="ghost" size="icon" className="ml-auto h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity" onClick={() => handleCopy('contacto@albaidex.com')}>
+                  <a href="mailto:info@albaidex.com" className="ml-4 text-sm font-medium text-foreground">info@albaidex.com</a>
+                  <Button variant="ghost" size="icon" className="ml-auto h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity" onClick={() => handleCopy('info@albaidex.com')}>
                     <ClipboardCopy className="w-4 h-4" />
                     <span className="sr-only">Copiar email</span>
                   </Button>
                 </div>
                 
-                <a href="#" className="flex items-center p-3 rounded-lg bg-background transition-colors duration-200 ease-in-out hover:bg-accent group" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="w-5 h-5 text-primary" />
-                  <span className="ml-4 text-sm font-medium text-foreground">Conectar en LinkedIn</span>
+                <a href="https://www.instagram.com/albaidex" className="flex items-center p-3 rounded-lg bg-background transition-colors duration-200 ease-in-out hover:bg-accent group" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="w-5 h-5 text-primary" />
+                  <span className="ml-4 text-sm font-medium text-foreground">Síguenos en Instagram</span>
                   <ArrowUpRight className="w-5 h-5 ml-auto text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               </div>
