@@ -145,12 +145,12 @@ const TechnologySlider = () => {
                     <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Usamos tecnologías modernas y fiables para construir soluciones de alta calidad.</p>
                 </div>
             </div>
-            <div className="relative fade-in group">
-                <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
+            <div className="relative fade-in">
+                <div className="flex w-max animate-marquee">
                     {extendedTechnologies.map((tech, index) => (
-                        <div key={index} className="flex-shrink-0 w-64 px-4">
+                        <div key={index} className="flex-shrink-0 w-52 px-4">
                             <div className="flex flex-col items-center justify-center p-6 bg-card rounded-2xl border border-border/50 h-32">
-                                <div className="relative h-20 w-48">
+                                <div className="relative h-20 w-32">
                                   <Image 
                                       src={tech.image} 
                                       alt={tech.name} 
