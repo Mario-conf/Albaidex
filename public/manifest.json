@@ -1,0 +1,23 @@
+{
+  "name": "Albaidex",
+  "short_name": "Albaidex",
+  "description": "Convertimos tus ideas en soluciones de software a medida, potentes y eficientes para tu negocio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#ffae00",
+  "icons": [
+    {
+      "src": "/img/img/icons/isotipoalbaidex.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/img/icons/isotipoalbaidex.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -5,6 +5,12 @@ import { Toaster } from "@/components/ui/toaster"
 export const metadata: Metadata = {
   title: 'Albaidex | Desarrollo de Software a Medida',
   description: 'Convertimos tus ideas en soluciones de software a medida, potentes y eficientes para tu negocio.',
+  manifest: '/manifest.json',
+  themeColor: '#ffae00',
+  icons: {
+    icon: '/img/img/icons/isotipoalbaidex.png',
+    apple: '/img/img/icons/isotipoalbaidex.png',
+  },
 };
 
 export default function RootLayout({
@@ -15,7 +21,6 @@ export default function RootLayout({
   return (
     <html lang="es" className="!scroll-smooth">
       <head>
-        <link rel="icon" href="/img/img/icons/isotipoalbaidex.png" type="image/png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
