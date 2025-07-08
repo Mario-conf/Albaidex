@@ -28,7 +28,6 @@ import {
   Linkedin,
   ArrowUpRight
 } from "lucide-react";
-import { Isotype } from '@/components/isotype';
 
 // All dynamic page content is centralized here for easy editing.
 const pageData = {
@@ -150,7 +149,7 @@ const TechnologySlider = () => {
                     <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Usamos tecnologías modernas y fiables para construir soluciones de alta calidad.</p>
                 </div>
             </div>
-            <div className="relative fade-in group">
+            <div className="relative fade-in">
                 <div className="flex w-max animate-marquee">
                     {extendedTechnologies.map((tech, index) => (
                         <div key={index} className="flex-shrink-0 w-52 px-4">
@@ -306,7 +305,13 @@ const Contact = () => {
             <div className="p-6">
               <div className="flex items-center mb-6">
                 <div className="bg-primary p-3 rounded-lg mr-4">
-                  <Isotype className="w-6 h-6" pomegranateClassName="fill-white" bracketsClassName="stroke-primary" />
+                  <Image 
+                    src="/img/img/isotype.png"
+                    alt="Albaidex Isotype"
+                    width={24}
+                    height={24}
+                    data-ai-hint="isotype logo"
+                  />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-foreground">Albaidex</h3>

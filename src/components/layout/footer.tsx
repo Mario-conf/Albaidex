@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Isotype } from "../isotype";
+import Image from "next/image";
 
 export const Footer = () => {
   return (
@@ -9,7 +9,13 @@ export const Footer = () => {
           <div className="md:col-span-12 lg:col-span-5">
              <Link href="#" className="inline-flex items-center gap-3 text-2xl font-bold text-white">
                 <div className="bg-primary p-1.5 rounded-lg">
-                  <Isotype className="h-7 w-7" pomegranateClassName="fill-white" bracketsClassName="stroke-primary" />
+                  <Image 
+                    src="/img/img/isotype.png"
+                    alt="Albaidex Isotype"
+                    width={28}
+                    height={28}
+                    data-ai-hint="isotype logo"
+                  />
                 </div>
                 Albaidex
              </Link>
