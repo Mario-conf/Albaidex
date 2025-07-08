@@ -234,7 +234,7 @@ const Scope = () => (
             <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
               <Wifi className="w-10 h-10 text-primary" />
             </div>
-            <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Trabajo 100% Remoto</h3>
+            <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Trabajo Remoto</h3>
             <p className="text-muted-foreground">Operamos de forma completamente remota, lo que nos permite ser más ágiles, eficientes y atraer al mejor talento sin importar la ubicación.</p>
           </CardContent>
         </Card>
@@ -260,7 +260,7 @@ const Security = () => (
                     </div>
                     <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Responsabilidad del Usuario</h3>
                     <p className="text-muted-foreground">
-                      La seguridad de tu cuenta es un esfuerzo conjunto. Eres responsable de custodiar tus credenciales, y por nuestra parte, implementamos políticas como la rotación periódica de contraseñas y la restricción de claves recientes para fortalecer la protección de tus datos.
+                      Te pedimos que uses contraseñas seguras y no las compartas. Nosotros aplicamos medidas como el cambio periódico obligatorio de contraseña y bloqueos ante repeticiones. Si tú cuidas tu acceso, nosotros nos encargamos del resto.
                     </p>
                   </CardContent>
                 </Card>
@@ -271,7 +271,7 @@ const Security = () => (
                     </div>
                     <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Protección de Datos</h3>
                     <p className="text-muted-foreground">
-                        Protegemos los datos con encriptación en bases de datos MySQL. Sin embargo, no nos hacemos responsables de accesos indebidos por negligencia del usuario en la custodia de sus credenciales.
+                      En nuestras plataformas, la seguridad es una parte esencial de todo lo que hacemos. Aplicamos buenas prácticas para proteger tus datos y mantener la integridad de nuestras aplicaciones. Pero la seguridad también depende de ti: proteger tus credenciales y seguir las recomendaciones es clave para una experiencia segura.
                     </p>
                   </CardContent>
                 </Card>
