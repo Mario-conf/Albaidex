@@ -71,37 +71,15 @@ const pageData = {
   ],
   appSolutions: [
     {
-      title: "Finanzas67",
-      description: "Gestión financiera inteligente para pymes y autónomos.",
-      image: "/img/img/app-finanzas67.png",
+      title: "Fondo Mercato",
+      description: "Gestión financiera inteligente para particulares.",
+      image: "/img/img/",
       hint: "finance dashboard",
-      subdomain: "finanzas67.albaidex.com",
+      subdomain: "fondomercato.albaidex.com",
       githubUrl: "#"
     },
-    {
-      title: "Notasync",
-      description: "Toma de notas colaborativa con sincronización en tiempo real.",
-      image: "/img/img/app-notasync.png",
-      hint: "notes app interface",
-      subdomain: "notasync.albaidex.com",
-      githubUrl: "#"
-    },
-    {
-      title: "PlaniAdmin",
-      description: "Planificación de proyectos y gestión de tareas para equipos.",
-      image: "/img/img/app-planiadmin.png",
-      hint: "project management board",
-      subdomain: "planiadmin.albaidex.com",
-      githubUrl: "#"
-    },
-    {
-      title: "GestorRecursos",
-      description: "Optimiza la asignación y el uso de recursos empresariales.",
-      image: "/img/img/app-gestorrecursos.png",
-      hint: "resource allocation chart",
-      subdomain: "gestorrecursos.albaidex.com",
-      githubUrl: "#"
-    }
+
+    
   ],
   technologies: [
     { name: "Typescript", image: "/img/img/typescript.png", hint: "typescript logo" },
