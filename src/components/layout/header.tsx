@@ -1,14 +1,24 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { href: "#soluciones", label: "Soluciones" },
@@ -20,19 +30,28 @@ export const Header = () => {
   return (
     <header
       id="header"
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/90 backdrop-blur-sm shadow-md"
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled ? "bg-background/90 backdrop-blur-sm shadow-md" : "bg-transparent"
+      )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link href="#" className="flex items-center gap-3">
-            <Image 
-              src="/img/img/icons/isotipoalbaidex.png"
-              alt="Albaidex Isotype"
-              width={40} 
-              height={40}
-              data-ai-hint="isotype logo"
-            />
-            <span className="text-2xl font-bold text-foreground">
+             <div className="w-10 h-10 flex items-center justify-center">
+                <Image 
+                  src="/img/img/icons/isotipoalbaidex.png"
+                  alt="Albaidex Isotype"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                  data-ai-hint="isotype logo"
+                />
+            </div>
+            <span className={cn(
+                "text-2xl font-bold transition-colors",
+                scrolled ? "text-foreground" : "text-white"
+            )}>
               Albaidex
             </span>
           </Link>
@@ -41,7 +60,10 @@ export const Header = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="transition-colors text-lg text-muted-foreground hover:text-primary"
+                className={cn(
+                    "transition-colors text-lg hover:text-primary",
+                    scrolled ? "text-muted-foreground" : "text-gray-200"
+                )}
               >
                 {link.label}
               </Link>
@@ -50,7 +72,7 @@ export const Header = () => {
           <div className="md:hidden">
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-foreground">
+                <Button variant="ghost" size="icon" className={cn("transition-colors", scrolled ? "text-foreground" : "text-white hover:bg-white/10")}>
                   <Menu className="h-7 w-7" />
                   <span className="sr-only">Abrir menú</span>
                 </Button>
@@ -58,13 +80,16 @@ export const Header = () => {
               <SheetContent side="right" className="w-[280px] bg-background">
                 <div className="flex flex-col h-full p-6">
                   <Link href="#" className="flex items-center gap-3 mb-8" onClick={() => setMobileMenuOpen(false)}>
-                    <Image 
-                      src="/img/img/icons/isotipoalbaidex.png"
-                      alt="Albaidex Isotype"
-                      width={40}
-                      height={40}
-                      data-ai-hint="isotype logo"
-                    />
+                     <div className="w-10 h-10 flex items-center justify-center">
+                        <Image 
+                          src="/img/img/icons/isotipoalbaidex.png"
+                          alt="Albaidex Isotype"
+                          width={40}
+                          height={40}
+                          className="object-contain"
+                          data-ai-hint="isotype logo"
+                        />
+                    </div>
                     <span className="text-2xl font-bold text-foreground">
                       Albaidex
                     </span>
