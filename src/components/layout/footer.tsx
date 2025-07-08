@@ -17,7 +17,7 @@ export const Footer = () => {
                 />
                 Albaidex
              </Link>
-             <p className="text-sm text-gray-400 mt-2 max-w-xs mx-auto md:mx-0">Software inteligente, desarrollado con inteligencia.</p>
+             <p className="text-sm text-gray-400 mt-2 max-w-xs mx-auto md:mx-0">No Magic. Just Software.</p>
           </div>
           <div className="md:col-span-6 lg:col-span-3">
              <h3 className="font-semibold text-white mb-4 uppercase tracking-wider">Navegación</h3>

@@ -315,7 +315,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-foreground">Albaidex</h3>
-                  <p className="text-sm text-muted-foreground">Software inteligente, desarrollado con inteligencia.</p>
+                  <p className="text-sm text-muted-foreground">No Magic. Just Software.</p>
                 </div>
               </div>
 
