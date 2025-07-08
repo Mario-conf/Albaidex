@@ -8,15 +8,13 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 text-center md:text-left">
           <div className="md:col-span-12 lg:col-span-5">
              <Link href="#" className="inline-flex items-center gap-3 text-2xl font-bold text-white">
-                <div className="bg-primary p-1.5 rounded-lg">
-                  <Image 
-                    src="/img/img/icons/isotipoalbaidex.png"
-                    alt="Albaidex Isotype"
-                    width={28}
-                    height={28}
-                    data-ai-hint="isotype logo"
-                  />
-                </div>
+                <Image 
+                  src="/img/img/icons/isotipoalbaidex.png"
+                  alt="Albaidex Isotype"
+                  width={40}
+                  height={40}
+                  data-ai-hint="isotype logo"
+                />
                 Albaidex
              </Link>
              <p className="text-sm text-gray-400 mt-2 max-w-xs mx-auto md:mx-0">Software inteligente, desarrollado con inteligencia.</p>

@@ -25,15 +25,13 @@ export const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link href="#" className="flex items-center gap-3">
-            <div className="p-1.5 rounded-lg bg-primary">
-              <Image 
-                src="/img/img/icons/isotipoalbaidex.png"
-                alt="Albaidex Isotype"
-                width={28} 
-                height={28}
-                data-ai-hint="isotype logo"
-              />
-            </div>
+            <Image 
+              src="/img/img/icons/isotipoalbaidex.png"
+              alt="Albaidex Isotype"
+              width={40} 
+              height={40}
+              data-ai-hint="isotype logo"
+            />
             <span className="text-2xl font-bold text-foreground">
               Albaidex
             </span>
@@ -60,15 +58,13 @@ export const Header = () => {
               <SheetContent side="right" className="w-[280px] bg-background">
                 <div className="flex flex-col h-full p-6">
                   <Link href="#" className="flex items-center gap-3 mb-8" onClick={() => setMobileMenuOpen(false)}>
-                    <div className="p-1.5 rounded-lg bg-primary">
-                      <Image 
-                        src="/img/img/icons/isotipoalbaidex.png"
-                        alt="Albaidex Isotype"
-                        width={28}
-                        height={28}
-                        data-ai-hint="isotype logo"
-                      />
-                    </div>
+                    <Image 
+                      src="/img/img/icons/isotipoalbaidex.png"
+                      alt="Albaidex Isotype"
+                      width={40}
+                      height={40}
+                      data-ai-hint="isotype logo"
+                    />
                     <span className="text-2xl font-bold text-foreground">
                       Albaidex
                     </span>
