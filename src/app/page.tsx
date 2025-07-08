@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { ContactForm } from "@/components/contact-form";
+import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { 
@@ -22,7 +22,9 @@ import {
   Globe,
   Wifi,
   Zap,
-  Rocket
+  Rocket,
+  Mail,
+  ClipboardCopy
 } from "lucide-react";
 
 // All dynamic page content is centralized here for easy editing.
@@ -280,15 +282,40 @@ const Security = () => (
     </section>
 );
 
-const Contact = () => (
+const Contact = () => {
+  const { toast } = useToast();
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText('contacto@albaidex.com');
+    toast({
+      title: "Email copiado",
+      description: "La dirección de correo ha sido copiada al portapapeles.",
+    });
+  };
+  
+  return (
     <section id="contact" className="py-20 md:py-32 bg-muted">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="fade-in">
-              <ContactForm />
-            </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">¿Listo para construir algo increíble?</h2>
+          <p className="mt-4 text-lg text-muted-foreground">Hablemos de tu próximo proyecto.</p>
+          <Card className="mt-12 text-center shadow-lg">
+            <CardContent className="p-8 flex flex-col items-center justify-center gap-6">
+              <div className="flex items-center gap-4 text-xl md:text-2xl font-semibold text-foreground">
+                <Mail className="w-8 h-8 text-primary"/>
+                <span>contacto@albaidex.com</span>
+              </div>
+              <Button onClick={handleCopy} size="lg">
+                <ClipboardCopy className="mr-2 h-4 w-4" />
+                Copiar Email
+              </Button>
+            </CardContent>
+          </Card>
         </div>
+      </div>
     </section>
-);
+  )
+};
 
 export default function Home() {
   const [activeView, setActiveView] = useState<'enterprise' | 'apps'>('enterprise');
