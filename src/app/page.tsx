@@ -306,7 +306,7 @@ const Contact = () => {
               <div className="flex items-center mb-6">
                 <div className="bg-primary p-3 rounded-lg mr-4">
                   <Image 
-                    src="/img/img/isotype.png"
+                    src="/img/img/icons/isotipoalbaidex.png"
                     alt="Albaidex Isotype"
                     width={24}
                     height={24}

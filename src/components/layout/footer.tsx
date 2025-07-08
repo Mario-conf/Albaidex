@@ -10,7 +10,7 @@ export const Footer = () => {
              <Link href="#" className="inline-flex items-center gap-3 text-2xl font-bold text-white">
                 <div className="bg-primary p-1.5 rounded-lg">
                   <Image 
-                    src="/img/img/isotype.png"
+                    src="/img/img/icons/isotipoalbaidex.png"
                     alt="Albaidex Isotype"
                     width={28}
                     height={28}

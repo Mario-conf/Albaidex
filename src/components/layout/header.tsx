@@ -27,7 +27,7 @@ export const Header = () => {
           <Link href="#" className="flex items-center gap-3">
             <div className="p-1.5 rounded-lg bg-primary">
               <Image 
-                src="/img/img/isotype.png"
+                src="/img/img/icons/isotipoalbaidex.png"
                 alt="Albaidex Isotype"
                 width={28} 
                 height={28}
@@ -62,7 +62,7 @@ export const Header = () => {
                   <Link href="#" className="flex items-center gap-3 mb-8" onClick={() => setMobileMenuOpen(false)}>
                     <div className="p-1.5 rounded-lg bg-primary">
                       <Image 
-                        src="/img/img/isotype.png"
+                        src="/img/img/icons/isotipoalbaidex.png"
                         alt="Albaidex Isotype"
                         width={28}
                         height={28}
