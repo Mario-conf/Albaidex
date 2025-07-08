@@ -303,20 +303,15 @@ const Contact = () => {
           <p className="mt-4 text-lg text-muted-foreground">Elige cómo prefieres hablar con nosotros, de forma rápida y sencilla.</p>
           <Card className="mt-12 text-left shadow-lg overflow-hidden bg-muted">
             <div className="p-6">
-              <div className="flex items-center mb-6">
-                <div className="bg-primary p-3 rounded-lg mr-4">
-                  <Image 
-                    src="/img/img/icons/isotipoalbaidex.png"
-                    alt="Albaidex Isotype"
-                    width={24}
-                    height={24}
-                    data-ai-hint="isotype logo"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground">Albaidex</h3>
-                  <p className="text-sm text-muted-foreground">No Magic. Just Software.</p>
-                </div>
+              <div className="flex justify-center mb-6">
+                <Image 
+                  src="/img/img/logo.png"
+                  alt="Albaidex Logo"
+                  width={180}
+                  height={45}
+                  className="object-contain"
+                  data-ai-hint="company logo"
+                />
               </div>
 
               <div className="space-y-3">
