@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Isotype } from "../isotype";
 
 export const Footer = () => {
   return (
@@ -6,7 +7,10 @@ export const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 text-center md:text-left">
           <div className="md:col-span-12 lg:col-span-5">
-             <Link href="#" className="text-2xl font-bold text-white">Albaidex</Link>
+             <Link href="#" className="inline-flex items-center gap-3 text-2xl font-bold text-white">
+                <Isotype className="h-8 w-8" pomegranateClassName="fill-white" bracketsClassName="stroke-[hsl(var(--primary))]" />
+                Albaidex
+             </Link>
              <p className="text-sm text-gray-400 mt-2 max-w-xs mx-auto md:mx-0">Software inteligente, desarrollado con inteligencia.</p>
           </div>
           <div className="md:col-span-6 lg:col-span-3">

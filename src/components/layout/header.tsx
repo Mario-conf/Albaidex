@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Isotype } from "../isotype";
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -34,8 +35,15 @@ export const Header = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link href="#" className={`text-3xl font-bold transition-colors ${scrolled ? 'text-foreground' : 'text-white'}`}>
-            Albaidex
+          <Link href="#" className="flex items-center gap-3">
+            <Isotype
+              className="h-9 w-9"
+              pomegranateClassName={scrolled ? 'fill-primary' : 'fill-white'}
+              bracketsClassName={scrolled ? 'stroke-[hsl(var(--background))]' : 'stroke-[hsl(var(--primary))]'}
+            />
+            <span className={`text-2xl font-bold transition-colors ${scrolled ? 'text-foreground' : 'text-white'}`}>
+              Albaidex
+            </span>
           </Link>
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
@@ -58,8 +66,15 @@ export const Header = () => {
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] bg-background">
                 <div className="flex flex-col h-full p-6">
-                  <Link href="#" className="text-2xl font-bold text-foreground mb-8" onClick={() => setMobileMenuOpen(false)}>
-                    Albaidex
+                  <Link href="#" className="flex items-center gap-3 mb-8" onClick={() => setMobileMenuOpen(false)}>
+                    <Isotype
+                      className="h-8 w-8 text-primary"
+                      pomegranateClassName='fill-primary'
+                      bracketsClassName='stroke-[hsl(var(--background))]'
+                    />
+                    <span className="text-2xl font-bold text-foreground">
+                      Albaidex
+                    </span>
                   </Link>
                   <nav className="flex flex-col space-y-6 mt-6">
                     {navLinks.map((link) => (

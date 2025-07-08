@@ -28,6 +28,7 @@ import {
   Linkedin,
   ArrowUpRight
 } from "lucide-react";
+import { Isotype } from '@/components/isotype';
 
 // All dynamic page content is centralized here for easy editing.
 const pageData = {
@@ -149,8 +150,8 @@ const TechnologySlider = () => {
                     <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Usamos tecnologías modernas y fiables para construir soluciones de alta calidad.</p>
                 </div>
             </div>
-            <div className="relative fade-in group">
-                <div className="flex w-max animate-marquee group-hover:[animation-play-state:running]">
+            <div className="relative fade-in">
+                <div className="flex w-max animate-marquee">
                     {extendedTechnologies.map((tech, index) => (
                         <div key={index} className="flex-shrink-0 w-52 px-4">
                             <div className="flex flex-col items-center justify-center p-6 bg-card rounded-2xl border border-border/50 h-32">
@@ -184,7 +185,7 @@ const Philosophy = () => (
       <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mt-12 fade-in">
         <Card className="card-hover flex flex-col">
           <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-            <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
+            <div className="bg-background rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
               <Github className="w-10 h-10 text-primary" />
             </div>
             <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Open Code</h3>
@@ -193,7 +194,7 @@ const Philosophy = () => (
         </Card>
         <Card className="card-hover flex flex-col">
           <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-            <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
+            <div className="bg-background rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
               <Sparkles className="w-10 h-10 text-primary" />
             </div>
             <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">IA Esencial</h3>
@@ -202,7 +203,7 @@ const Philosophy = () => (
         </Card>
         <Card className="card-hover flex flex-col">
           <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-            <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
+            <div className="bg-background rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
               <Zap className="w-10 h-10 text-primary" />
             </div>
             <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Eficiencia Radical</h3>
@@ -259,7 +260,7 @@ const Security = () => (
             <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mt-12 fade-in max-w-4xl mx-auto">
                 <Card className="card-hover flex flex-col">
                   <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-                    <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
+                    <div className="bg-background rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
                       <ShieldCheck className="w-10 h-10 text-primary" />
                     </div>
                     <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Responsabilidad del Usuario</h3>
@@ -270,7 +271,7 @@ const Security = () => (
                 </Card>
                 <Card className="card-hover flex flex-col">
                   <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-                    <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
+                    <div className="bg-background rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
                       <DatabaseZap className="w-10 h-10 text-primary" />
                     </div>
                     <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">Protección de Datos</h3>
@@ -305,7 +306,7 @@ const Contact = () => {
             <div className="p-6">
               <div className="flex items-center mb-6">
                 <div className="bg-primary p-3 rounded-full mr-4">
-                  <svg className="w-6 h-6 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                  <Isotype className="w-6 h-6" pomegranateClassName="fill-white" bracketsClassName="stroke-[hsl(var(--primary))]" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-foreground">Albaidex</h3>
@@ -356,7 +357,7 @@ export default function Home() {
                   : 'Aplicaciones intuitivas que mejoran tu vida cotidiana.'}
               </p>
               <div className="mt-8 flex justify-center">
-                <div className="bg-muted p-1 rounded-full flex items-center gap-2">
+                <div className="bg-muted p-1 rounded-full flex items-center gap-1 sm:gap-2">
                   <Button
                     onClick={() => setActiveView('enterprise')}
                     variant={activeView === 'enterprise' ? 'default' : 'ghost'}
@@ -380,7 +381,7 @@ export default function Home() {
                 {pageData.enterpriseSolutions.map((solution) => (
                   <Card key={solution.title} className="card-hover flex flex-col">
                     <CardContent className="p-6 flex flex-col items-center text-center flex-grow">
-                      <div className="bg-muted rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
+                      <div className="bg-background rounded-2xl w-full p-6 mb-6 flex justify-center items-center h-24">
                         {solution.icon}
                       </div>
                       <h3 className="text-2xl font-semibold leading-none tracking-tight mb-4">{solution.title}</h3>
