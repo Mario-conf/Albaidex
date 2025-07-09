@@ -73,10 +73,10 @@ const pageData = {
     {
       title: "Fondo Mercato",
       description: "Gestión financiera inteligente para particulares.",
-      image: "/img/img/",
+      image: "public/img/img/apps/fondomercatologo.png",
       hint: "finance dashboard",
-      subdomain: "fondomercato.albaidex.com",
-      githubUrl: "#"
+      subdomain: "https://fondomercato.vercel.app/",
+      githubUrl: "https://github.com/Mario-conf/FondoMercato"
     },
 
     
