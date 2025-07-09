@@ -103,10 +103,17 @@ const pageData = {
 // Page Sections
 const Hero = () => (
   <section className="relative h-screen flex items-center justify-center text-center text-white bg-black">
-    <Image src={pageData.hero.image} alt="Equipo de Albaidex colaborando en un proyecto" fill className="object-cover opacity-40" data-ai-hint={pageData.hero.hint}/>
+    <Image 
+      src={pageData.hero.image} 
+      alt="Equipo de Albaidex colaborando en un proyecto" 
+      fill 
+      priority
+      className="object-cover opacity-40" 
+      data-ai-hint={pageData.hero.hint}
+    />
     <div className="relative z-10 p-4 fade-in">
-        <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-tight text-white">{pageData.hero.title}</h1>
-        <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-200">{pageData.hero.subtitle}</p>
+        <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-tight text-white text-shadow-md">{pageData.hero.title}</h1>
+        <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-200 text-shadow">{pageData.hero.subtitle}</p>
         <div className="mt-8 flex justify-center">
             <Button asChild size="lg" className="h-auto bg-primary text-primary-foreground font-bold py-4 px-10 rounded-full hover:bg-primary/90 transition-all duration-300 text-lg shadow-lg">
                 <Link href="#soluciones">Explorar Soluciones</Link>
