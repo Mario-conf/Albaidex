@@ -79,7 +79,6 @@ const pageData = {
       githubUrl: "https://github.com/Mario-conf/FondoMercato"
     },
 
-    
   ],
   technologies: [
     { name: "Typescript", image: "/img/img/typescript.png", hint: "typescript logo" },
