@@ -73,9 +73,9 @@ const pageData = {
     {
       title: "Fondo Mercato",
       description: "Gestión financiera inteligente para particulares.",
-      image: "public/img/img/apps/fondomercatologo.png",
+      image: "/img/img/apps/fondomercatologo.png",
       hint: "finance dashboard",
-      subdomain: "https://fondomercato.vercel.app/",
+      url: "https://fondomercato.vercel.app/",
       githubUrl: "https://github.com/Mario-conf/FondoMercato"
     },
 
@@ -283,7 +283,7 @@ const Contact = () => {
             <div className="p-6">
               <div className="flex justify-center mb-6">
                 <Image 
-                  src="/img/img/icons/albaidexlogo.png"
+                  src="/img/img/icons/logoalbaidex.png"
                   alt="Albaidex Logo"
                   width={190.8}
                   height={95.4}
@@ -372,7 +372,7 @@ export default function Home() {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 fade-in">
                  {pageData.appSolutions.map((solution) => (
                   <Card key={solution.title} className="card-hover flex flex-col overflow-hidden">
-                    <Link href={`https://${solution.subdomain}`} target="_blank" rel="noopener noreferrer" className="block">
+                    <Link href={solution.url} target="_blank" rel="noopener noreferrer" className="block">
                       <Image 
                           src={solution.image} 
                           alt={solution.title} 
@@ -390,7 +390,7 @@ export default function Home() {
                     </CardContent>
                     <CardFooter className="flex-col sm:flex-row gap-2">
                         <Button asChild className="w-full">
-                            <Link href={`https://${solution.subdomain}`} target="_blank" rel="noopener noreferrer">
+                            <Link href={solution.url} target="_blank" rel="noopener noreferrer">
                                 <Rocket className="mr-2 h-4 w-4" /> Acceder
                             </Link>
                         </Button>
