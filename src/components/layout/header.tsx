@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 export const Header = () => {
@@ -78,7 +78,9 @@ export const Header = () => {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] bg-background">
-                <div className="flex flex-col h-full p-6">
+                <SheetHeader className="p-6 pb-0">
+                  <SheetTitle className="sr-only">Menú de Navegación</SheetTitle>
+                  <SheetDescription className="sr-only">Navegación principal del sitio Albaidex.</SheetDescription>
                   <Link href="#" className="flex items-center gap-3 mb-8" onClick={() => setMobileMenuOpen(false)}>
                      <div className="w-10 h-10 flex items-center justify-center">
                         <Image 
@@ -94,6 +96,8 @@ export const Header = () => {
                       Albaidex
                     </span>
                   </Link>
+                </SheetHeader>
+                <div className="flex flex-col h-full p-6 pt-0">
                   <nav className="flex flex-col space-y-6 mt-6">
                     {navLinks.map((link) => (
                       <Link
