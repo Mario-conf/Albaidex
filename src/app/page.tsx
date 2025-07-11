@@ -30,7 +30,7 @@ import {
   Linkedin
 } from "lucide-react";
 
-// All dynamic page content is centralized here for easy editing.
+
 const pageData = {
   hero: {
     title: "Hacemos software, no magia.",
