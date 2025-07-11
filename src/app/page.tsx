@@ -26,7 +26,8 @@ import {
   Mail,
   ClipboardCopy,
   Instagram,
-  ArrowUpRight
+  ArrowUpRight,
+  Linkedin
 } from "lucide-react";
 
 // All dynamic page content is centralized here for easy editing.
@@ -307,6 +308,12 @@ const Contact = () => {
                     <span className="sr-only">Copiar email</span>
                   </Button>
                 </div>
+
+                <a href="https://www.linkedin.com/company/albaidex/" className="flex items-center p-3 rounded-lg bg-background transition-colors duration-200 ease-in-out hover:bg-accent group" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="w-5 h-5 text-primary" />
+                  <span className="ml-4 text-sm font-medium text-foreground">Conecta en LinkedIn</span>
+                  <ArrowUpRight className="w-5 h-5 ml-auto text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
                 
                 <a href="https://www.instagram.com/albaidex" className="flex items-center p-3 rounded-lg bg-background transition-colors duration-200 ease-in-out hover:bg-accent group" target="_blank" rel="noopener noreferrer">
                   <Instagram className="w-5 h-5 text-primary" />
